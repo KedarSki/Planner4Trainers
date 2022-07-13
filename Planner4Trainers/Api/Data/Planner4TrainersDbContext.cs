@@ -182,12 +182,67 @@ namespace Api.Data
             modelBuilder.Entity<Exercise>().HasData(new Exercise
             {
                 Id = 16,
-                Name = "Skłony do ziemi z wyprostem",
-                Description = "Skłony na wyprostowanych w kolanach nogach w delikatnym rozkroku",
+                Name = "Skłony tłowia do ziemi z wyprostem",
+                Description = "Skłony tłowia do ziemi na wyprostowanych w kolanach nogach w delikatnym rozkroku",
                 TimeLength = 0.5M,
                 ExerciseTypeId = 3
             });
 
+            modelBuilder.Entity<Exercise>().HasData(new Exercise
+            {
+                Id = 17,
+                Name = "Skręty tłowia do kostek",
+                Description = "Skłony na wyprostowanych nogach w delikatnym rozkroku, ręce w pełnym wyproście na bok i dotykamy lewą rękę do prawej nogi" +
+                "i odwrotnie.",
+                TimeLength = 0.5M,
+                ExerciseTypeId = 3
+            });
+
+            modelBuilder.Entity<Exercise>().HasData(new Exercise
+            {
+                Id = 18,
+                Name = "Skręty tłowia w przód i w tył",
+                Description = "Skręty tłowia podczas wykonywania tłów należy pochylić do skłonu w przód a następnie odchylając w tył.",
+                TimeLength = 0.5M,
+                ExerciseTypeId = 3
+            });
+
+            modelBuilder.Entity<Exercise>().HasData(new Exercise
+            {
+                Id = 19,
+                Name = "Cios sierpowy ze skłonem do kostki",
+                Description = "W delikatnym rozkroku wykonać dynamiczny cios sierpowy i po każdym ciosie wykonać skłon do kostki przeciwnej do ręki.",
+                TimeLength = 0.5M,
+                ExerciseTypeId = 3
+            });
+
+
+            modelBuilder.Entity<Exercise>().HasData(new Exercise
+            {
+                Id = 20,
+                Name = "Przysiady",
+                Description = "Przysiady na złączonych nogach.",
+                TimeLength = 0.5M,
+                ExerciseTypeId = 3
+            });
+
+            modelBuilder.Entity<Exercise>().HasData(new Exercise
+            {
+                Id = 21,
+                Name = "Przysiady",
+                Description = "Przysiady na złączonych nogach.",
+                TimeLength = 0.5M,
+                ExerciseTypeId = 3
+            });
+
+            modelBuilder.Entity<Exercise>().HasData(new Exercise
+            {
+                Id = 21,
+                Name = "Przysiady",
+                Description = "Przysiady na złączonych nogach.",
+                TimeLength = 0.5M,
+                ExerciseTypeId = 3
+            });
 
             //Add type of workouts
             modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
