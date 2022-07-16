@@ -1,4 +1,5 @@
 ﻿using Api.Entities.Trainings;
+using Api.Entities.Trainings.Warmups;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Data

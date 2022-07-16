@@ -1,4 +1,6 @@
 using Api.Data;
+using Api.Repositories;
+using Api.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextPool<Planner4TrainersDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+builder.Services.AddScoped<IExerciseTypeRepository, ExerciseTypeRepository>();
 
 var app = builder.Build();
 
