@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common.Dtos
 {
-    public class WarmupOnGoDtocs
+    public class WarmupOnGoDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

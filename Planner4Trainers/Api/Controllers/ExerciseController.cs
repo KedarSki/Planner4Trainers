@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Api.Repositories.Contracts;
+using Api.Entities.Trainings;
+using Common.Dtos;
+using System;
+using Api.Extensions;
 
 namespace Api.Controllers
 {
@@ -9,11 +13,36 @@ namespace Api.Controllers
     public class ExerciseController : ControllerBase
     {
         private readonly IExerciseTypeRepository exerciseRepository;
-        public ExerciseController(IExerciseTypeRepository exercieRepository)
+        public ExerciseController(IExerciseTypeRepository exerciseTypeRepository)
         {
-            this.exerciseRepository = exercieRepository;
+            this.exerciseRepository = exerciseTypeRepository;
         }
 
-        public async Task<ActionResult<IEnumerable<Exercise>>>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ExerciseTypeDto>>> GetExerciseTypes()
+        {
+            try
+            {
+                var warmupsOnGo = await this.exerciseRepository.GetWarmupsOnGo();
+                var exerciseTypes = await this.exerciseRepository.GetExerciseTypes();
+
+                if(exerciseTypes == null || warmupsOnGo == null)
+                {
+                    return NotFound();
+                }
+
+                else
+                {
+                    var exerciseTypesDto = exerciseTypes.ConvertToDto(warmupsOnGo);
+                    return Ok(exerciseTypesDto);
+                }
+
+            }
+
+            catch(Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+            }
+        }
     }
 }
