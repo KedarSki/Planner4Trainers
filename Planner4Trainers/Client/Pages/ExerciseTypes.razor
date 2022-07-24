@@ -1,0 +1,29 @@
+﻿@page "/"
+@inherits ExerciseTypesBase
+
+
+@if (ExerciseTypes == null){
+    <h3>Trwa Ładowanie strony</h3>
+}
+else
+{
+    <h3 class="mb-5">Rodzaje Treningów</h3>
+
+    var exerciseTypes = new List<ExerciseTypeDto>();
+    exerciseTypes = ExerciseTypes.ToList();
+    @foreach(var exercise in exerciseTypes)
+    {
+       <tr>
+           <td>@exercise.Name</td>
+       </tr>
+
+       
+    }
+}
+
+
+@code {
+   // private ExerciseTypeDto[] exerciseTypes;
+
+
+}
