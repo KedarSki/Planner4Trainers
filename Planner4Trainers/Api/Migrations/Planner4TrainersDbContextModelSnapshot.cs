@@ -54,7 +54,7 @@ namespace Api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Api.Entities.Trainings.WarmupOnGo", b =>
+            modelBuilder.Entity("Api.Entities.Trainings.Warmups.WarmupOnGo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -161,7 +161,7 @@ namespace Api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Api.Entities.Trainings.WarmupOnPlace", b =>
+            modelBuilder.Entity("Api.Entities.Trainings.Warmups.WarmupOnPlace", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -174,6 +174,9 @@ namespace Api.Migrations
 
                     b.Property<int>("ExerciseTypeId")
                         .HasColumnType("int");
+
+                    b.Property<string>("ExerciseTypeName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -241,10 +244,18 @@ namespace Api.Migrations
                             ExerciseTypeId = 3,
                             Name = "Przysiady",
                             TimeLength = 0.5m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Z pozycji stojącej dynamiczne zejście do przysiadu. Następnie wyrzut nóg do tyłu przechodząc szybko do podporu przodem.",
+                            ExerciseTypeId = 3,
+                            Name = "Wyrzuty nóg do tyłu",
+                            TimeLength = 0.5m
                         });
                 });
 
-            modelBuilder.Entity("Api.Entities.Trainings.WarmupOnWalk", b =>
+            modelBuilder.Entity("Api.Entities.Trainings.Warmups.WarmupOnWalk", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

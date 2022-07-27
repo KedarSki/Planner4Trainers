@@ -253,6 +253,19 @@ namespace Api.Data
                 ExerciseTypeId = 3
             });
 
+            modelBuilder.Entity<WarmupOnPlace>().HasData(new WarmupOnPlace
+            {
+                Id = 8,
+                Name = "Wyrzuty nóg do tyłu",
+                Description = "Z pozycji stojącej dynamiczne zejście do przysiadu. Następnie wyrzut nóg do tyłu przechodząc szybko do podporu przodem.",
+                TimeLength = 0.5M,
+                ExerciseTypeId = 3
+            });
+
+
+
+
+  
 
 
             //Add type of workouts
