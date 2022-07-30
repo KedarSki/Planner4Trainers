@@ -19,6 +19,20 @@ else
 
        
     }
+    <h3 class="mb-5">Rozgrzewka w biegu</h3>
+
+    var warmupsOnGo = new List<WarmupOnGoDto>();
+    warmupsOnGo = WarmupsOnGo.ToList();
+    @foreach(var exercise in warmupsOnGo)
+    {
+       <tr>
+           <td>@exercise.Name</td>
+           
+       </tr>
+
+       
+    } 
+    
 }
 
 
