@@ -1,43 +1,43 @@
-﻿@page "/"
+﻿@page "/ExerciseTypes"
 @inherits ExerciseTypesBase
 
 
-@if (ExerciseTypes == null){
+@if (ExerciseTypes == null)
+{
     <h3>Trwa Ładowanie strony</h3>
 }
 else
 {
-    <h3 class="mb-5">Rodzaje Treningów</h3>
-
     var exerciseTypes = new List<ExerciseTypeDto>();
     exerciseTypes = ExerciseTypes.ToList();
-    @foreach(var exercise in exerciseTypes)
-    {
-       <tr>
-           <td>@exercise.Name</td>
-       </tr>
 
-       
-    }
-    <h3 class="mb-5">Rozgrzewka w biegu</h3>
 
-    var warmupsOnGo = new List<WarmupOnGoDto>();
-    warmupsOnGo = WarmupsOnGo.ToList();
-    @foreach(var exercise in warmupsOnGo)
-    {
-       <tr>
-           <td>@exercise.Name</td>
-           
-       </tr>
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Rodzaj treningu</th>
+                        <th>Opis treningu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var types in exerciseTypes)
+                    {
+                        <tr>
+                            <th>@types.Id</th>
+                            <th>@types.Name</th>
+                      
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-       
-    } 
-    
 }
 
-
 @code {
-   // private ExerciseTypeDto[] exerciseTypes;
-
 
 }

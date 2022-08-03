@@ -272,7 +272,8 @@ namespace Api.Data
             modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
             {
                 Id = 1,
-                Name = "Rozgrzewka w biegu"
+                Name = "Rozgrzewka",
+                Description = ""
 
             });
 
