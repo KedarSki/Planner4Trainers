@@ -13,7 +13,8 @@ namespace Api.Extensions
                     select new ExerciseTypeDto
                     {
                        Id = exerciseType.Id,
-                       Name = exerciseType.Name
+                       Name = exerciseType.Name,
+                       Description = exerciseType.Description
 
                     }).ToList();
         }
@@ -32,6 +33,7 @@ namespace Api.Extensions
                         TimeLength = warmupOnGo.TimeLength,
                         ExerciseTypeId = exerciseType.Id,
                         ExerciseTypeName = exerciseType.Name
+                        
                     }).ToList();
         }
         public static IEnumerable<WarmupOnWalkDto> ConvertToDto(this IEnumerable<ExerciseType> exerciseTypes,

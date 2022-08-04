@@ -1,6 +1,6 @@
 ﻿namespace Api.Entities.Trainings.Mains
 {
-    public class Endurance
+    public class Strength
     {
         public int Id { get; set; }
         public string Name { get; set; }

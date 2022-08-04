@@ -1,4 +1,5 @@
 ﻿using Api.Entities.Trainings;
+using Api.Entities.Trainings.Mains;
 using Api.Entities.Trainings.Warmups;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,10 +24,7 @@ namespace Api.Data
             {
                 Id = 1,
                 Name = "Bieg - Trucht",
-                Description = "Rozgrzewka w treningu sportowym będąca elementem części wstępnej jest nieodłączną i wręcz niezbędną częścią treningu. " +
-                "Ma ona szczególne znaczenie w zapobieganiu urazom." +
-                " Jest zestawem czynności „nisko-wysiłkowych”, jak np. szybki marsz lub wolny bieg, które należy wykonywać przed przystąpieniem do ćwiczeń rozciągających i do bardziej intensywnego wysiłku. " +
-                "Rozgrzewka przygotowuje układ oddechowy, sercowo-naczyniowy, układ nerwowy i mięśniowo-szkieletowy do wysiłku w części głównej poprzez stopniowy wzrost obciążenia tych układów tak, aby były one w stanie podołać bardziej intensywnemu wysiłkowi fizycznemu.",
+                Description = "Luźny bieg z jednoczesnymi wymachami ramion",
                 TimeLength = 10,
                 ExerciseTypeId = 1
 
@@ -263,7 +261,20 @@ namespace Api.Data
             });
 
 
+            // Power training
 
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+
+                Id = 1,
+                Name = "Wyciskanie sztangi w leżeniu na ławce poziomej.",
+                Description = "WAŻNE!: Pierwsze dwie serie wykonujemy rozgrzewkowo dobierając mniejszy ciężar." +
+                "Główne mięśnie zaangażowane w ćwiczeniu:" +
+                " cała grupa mięśni klatki piersiowej, mięśnie trójgłowe ramion, przednie aktony mięśni naramiennych.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 4
+            });
 
   
 
@@ -272,22 +283,45 @@ namespace Api.Data
             modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
             {
                 Id = 1,
-                Name = "Rozgrzewka",
-                Description = ""
+                Name = "Rozgrzewka w biegu",
+                Description = "Rozgrzewka w treningu sportowym będąca elementem części wstępnej jest nieodłączną i wręcz niezbędną częścią treningu. " +
+                "Ma ona szczególne znaczenie w zapobieganiu urazom." +
+                " Jest zestawem czynności „nisko-wysiłkowych”, jak np. szybki marsz lub wolny bieg, które należy wykonywać przed przystąpieniem do ćwiczeń rozciągających i do bardziej intensywnego wysiłku. " +
+                "Rozgrzewka przygotowuje układ oddechowy, sercowo-naczyniowy, układ nerwowy i mięśniowo-szkieletowy do wysiłku w części głównej poprzez stopniowy wzrost obciążenia tych układów tak, aby były one w stanie podołać bardziej intensywnemu wysiłkowi fizycznemu."
 
             });
 
             modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
             {
                 Id = 2,
-                Name = "Rozgrzewka w marszu"
+                Name = "Rozgrzewka w marszu",
+                Description = "Przejście do marszu ma na celu uspokojenie i wyrównanie oddechu z jednoczesnym dogrzaniem konkretnych partii mięśni oraz stawów." +
+                "Partię mięśni oraz stawów, które będą brały główny udział w treningu."
 
             });
 
             modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
             {
                 Id = 3,
-                Name = "Rozgrzewka w miejscu"
+                Name = "Rozgrzewka w miejscu",
+                Description = "Rozgrzewka miejscu na na celu dodatkową aktywację układu nerwowego ze względu na charakterystykę treningu bokserskiego. " +
+                "Trening bokserski wiąże się z ciągłąd zmianą dynamiki a zatem częstej zmiany tętna. Przygotowanie do tego ma nam dać właśnie rozgrzewka w miejscu," +
+                "która zawiera ćwiczenia dynamiczne."
+
+            });
+
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 4,
+                Name = "Trening Siłowy",
+                Description = "Trening na poprawę siły-każda grupa mięśniowa trenowana raz w tygodniu. Trening na dużych ciężarach z małą " +
+                "ilością powtórzeń w seriach(8-1).Przerwy pomiędzy seriami wydłużamy do 3-5 minut. Na duże grupy wykonujemy 8-10 serii," +
+                " na małe 6-8 serii(plus 2-3 serie rozgrzewkowe w obu przypadkach)." +
+                "Trening oparty na podstawowych ćwiczeniach(wyciskania, przysiady, uginania i wyprosty ramion, itp.) " +
+                "z użyciem wolnych ciężarów(sztanga, sztangielki).Czas trwania: 4-8 tygodni(nie dłużej) Oczywiście jest to tylko bardzo " +
+                "ogólny zapis, a od tych zasad są odstępstwa, ponieważ każdy organizm reaguje inaczej na te same bodźce. I tak w rzeczywistości," +
+                " każdy powinien wypracować sobie osobisty program-adekwatny do indywidualnych predyspozycji organizmu, a zapis ogólny powinien służyć, " +
+                "jako podstawa do dalszych prób wypracowania tego programu."
 
             });
 
@@ -297,6 +331,11 @@ namespace Api.Data
         public DbSet<WarmupOnWalk> WarmupOnWalk { get; set; }
         public DbSet <WarmupOnPlace> WarmupOnPlace { get; set; }
         public DbSet<ExerciseType> ExerciseType { get; set; }
+        public DbSet<Power> Power { get; set; }
+        public DbSet<Technique> Technique { get; set; }
+        public DbSet<Strength> Strength { get; set; }
+        public DbSet<Speed> Speed { get; set; }
+
 
     }
 }

@@ -6,5 +6,8 @@ namespace Client.Services.Contracts
     {
         Task<IEnumerable<ExerciseTypeDto>> GetExerciseTypes();
         Task<IEnumerable<WarmupOnGoDto>> GetWarmupsOnGo();
+        Task<IEnumerable<WarmupOnWalkDto>> GetWarmupsOnWalk();
+        Task<IEnumerable<WarmupOnPlaceDto>> GetWarmupsOnPlace();
+
     }
 }

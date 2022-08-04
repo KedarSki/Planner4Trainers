@@ -1,0 +1,112 @@
+﻿@page "/warmups"
+@inherits ExerciseTypesBase
+
+
+@if (ExerciseTypes == null)
+{
+    <h3 style="color:white">Trwa Ładowanie strony</h3>
+}
+else
+{
+    var warmupsOnGo = new List<WarmupOnGoDto>();
+    var warmupsOnWalk = new List<WarmupOnWalkDto>();
+    var warmupsOnPlace = new List<WarmupOnPlaceDto>();
+
+
+    warmupsOnGo = WarmupsOnGo.ToList();
+    warmupsOnWalk = WarmupsOnWalk.ToList();
+    warmupsOnPlace = WarmupsOnPlace.ToList();
+
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Rozgrzewka w biegu</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Ćwiczenie</th>
+                        <th>Opis treningu</th>
+                        <th>Długość trwania</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exerciseOnGo in warmupsOnGo)
+                    {
+                        <tr>
+                            <th>@exerciseOnGo.Id</th>
+                            <th>@exerciseOnGo.Name</th>
+                            <th>@exerciseOnGo.Description</th>
+                            <th>@exerciseOnGo.TimeLength</th>
+                      
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Rozgrzewka w marszu</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Ćwiczenie</th>
+                        <th>Opis treningu</th>
+                        <th>Długość trwania</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exerciseOnWalk in warmupsOnWalk)
+                    {
+                        <tr>
+                            <th>@exerciseOnWalk.Id</th>
+                            <th>@exerciseOnWalk.Name</th>
+                            <th>@exerciseOnWalk.Description</th>
+                            <th>@exerciseOnWalk.TimeLength</th>
+                      
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Rozgrzewka w miejscu</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Ćwiczenie</th>
+                        <th>Opis treningu</th>
+                        <th>Długość trwania</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exerciseOnPlace in warmupsOnPlace)
+                    {
+                        <tr>
+                            <th>@exerciseOnPlace.Id</th>
+                            <th>@exerciseOnPlace.Name</th>
+                            <th>@exerciseOnPlace.Description</th>
+                            <th>@exerciseOnPlace.TimeLength</th>
+                      
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
+@code {
+
+}

@@ -12,11 +12,16 @@ namespace Client.Pages
 
         public IEnumerable<ExerciseTypeDto> ExerciseTypes { get; set; }
         public IEnumerable<WarmupOnGoDto> WarmupsOnGo { get; set; }
+        public IEnumerable<WarmupOnWalkDto> WarmupsOnWalk { get; set; }
+        public IEnumerable<WarmupOnPlaceDto> WarmupsOnPlace { get; set; }
+
 
         protected override async Task OnInitializedAsync()
         {
             ExerciseTypes = await ExerciseTypeService.GetExerciseTypes();
             WarmupsOnGo = await ExerciseTypeService.GetWarmupsOnGo();
+            WarmupsOnWalk = await ExerciseTypeService.GetWarmupsOnWalk();
+            WarmupsOnPlace = await ExerciseTypeService.GetWarmupsOnPlace();
         }
     }
 }
