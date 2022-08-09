@@ -492,6 +492,168 @@ namespace Api.Data
                 ExerciseTypeId = 6
             });
 
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+
+                Id = 14,
+                Name = "PODCIĄGANIE KOŃCA SZTANGI W OPADZIE.",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: najszersze grzbietu, obłe mniejsze, obłe większe, podgrzebieniowe, czworoboczne, mięśnie równoległoboczne" +
+                "\nWykonanie:Stajemy okrakiem nad gryfem sztangi(półsztangi)i chwytamy drążek, tułów z udami tworzą kąt prosty, a z podłogą nieco większy. Nogi lekko ugięte w kolanach. W takiej pozycji podciągamy sztangę do brzucha. " +
+                "Opuszczanie ciężaru kontrolowane. Wdech bierzemy w momencie rozpoczęcia podciągania-wydech dopiero, gdy sztanga dochodzi do brzucha. W zależności od kąta, pod jakim chcemy zaatakować mięśnie używamy w tym ćwiczeniu różnych drążków(chwytamy je różnym uchwytem). " +
+                "I tak np. może to być drążek sztangi typu „T” mocniej zaangażowane górne części mięsni najszerszych i mięśni obłych-łokcie prowadzimy w bok od tułowia.)lub drążek/rączka równoległa łokcie prowadzone wzdłuż tułowia-mocniej zaangażowane środkowe części mięsni najszerszych i obłych). " +
+                "Możne też ćwiczenie to wykonywać w leżeniu na ławce skośnej(mniej angażuje mięśnie dolnego odcinka grzbietu, mocniej izoluje mięśnie najszersze.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 6
+            });
+
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+
+                Id = 15,
+                Name = "PRZYCIĄGANIE LINKI WYCIĄGU DOLNEGO W SIADZIE PŁASKIM.",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: najszersze grzbietu, obłe mniejsze, obłe większe, podgrzebieniowe, czworoboczne, mięśnie równoległoboczne" +
+                "\nWykonanie:Stajemy okrakiem nad gryfem sztangi(półsztangi)i chwytamy drążek, tułów z udami tworzą kąt prosty, a z podłogą nieco większy. Nogi lekko ugięte w kolanach. W takiej pozycji podciągamy sztangę do brzucha. " +
+                "Opuszczanie ciężaru kontrolowane. Wdech bierzemy w momencie rozpoczęcia podciągania-wydech dopiero, gdy sztanga dochodzi do brzucha. W zależności od kąta, pod jakim chcemy zaatakować mięśnie używamy w tym ćwiczeniu różnych drążków(chwytamy je różnym uchwytem). " +
+                "I tak np. może to być drążek sztangi typu „T” mocniej zaangażowane górne części mięsni najszerszych i mięśni obłych-łokcie prowadzimy w bok od tułowia.)lub drążek/rączka równoległa łokcie prowadzone wzdłuż tułowia-mocniej zaangażowane środkowe części mięsni najszerszych i obłych). " +
+                "Możne też ćwiczenie to wykonywać w leżeniu na ławce skośnej(mniej angażuje mięśnie dolnego odcinka grzbietu, mocniej izoluje mięśnie najszersze.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 6
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 16,
+                Name = "PODCIĄGANIE (WIOSŁOWANIE) W LEŻENIU NA ŁAWECZCE POZIOMEJ.",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: mięśnie najszersze grzbietu, obłe mniejsze, obłe większe" +
+                "\nWykonanie: Jest to ćwiczenie podobne do wiosłowania w opadzie tułowia, ale odciąża ono dolny odcinek mięsni grzbietu-szczególnie polecane dla osób, które mają kłopoty z tą właśnie częścią." +
+                " Technika podobna jak w ćwiczeniu w opadzie. Tułów oparty o ławkę poziomą. Łokcie przy ćwiczeniu ze sztangą prowadzimy w bok od tułowia, " +
+                "a w wersji ze sztangielkami wzdłuż tułowia(zaangażowanie mięśni analogicznie, jak przy ćwiczeniu w opadzie-z wyłączeniem pracy dolnego odcinka grzbietu). " +
+                "Ćwiczenie to można również wykonać na ławce skośnej. Zaangażowane będą te same mięsnie jednak pod innym kątem.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 6
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 17,
+                Name = "PRZYSIADY ZE SZTANGĄ NA BARKACH",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: pracują przede wszystkim głowy boczne, poś#286acanie i przyśrodkowe mięsni czworogłowych ud" +
+                "\nWykonanie: Ćwiczenie to można wykonywać zarówno ze sztanga, jak i sztangielkami,przy pomocy suwnicy Smitha lub maszyny. Wchodzimy pod sztangę stojącą na stojakach, barki opuszczone i odwiedzione w tył, gryf sztangi dotyka naszego karku na mięśniach czworobocznych grzbietu(ich górnej części), dłonie rozstawione w wygodnej i stabilnej pozycji na gryfie, klatka wypchnięta ku przodowi, naturalna krzywizna kręgosłupa-dolny odcinek grzbietu wypchnięty do przodu, rozstaw stóp w zależności od naszego poczucia stabilności(zmiana rozstawu stóp powodować będzie atak na mięśnie pod innym kątem), najlepiej nieco szerzej, niż barki, całe stopy przylegają do podłogi, ciężar ma opierać się na piętach, głowa zadarta nieco do tyłu. " +
+                "Z tej pozycji nabieramy głęboko powietrza i ściągamy sztangę ze stojaków i rozpoczynamy ruch w dół(najlepiej przed tym wypuszczając powietrze po ściąganiu sztangi ze stojaków i nabierając go ponownie). " +
+                "Przez cały czas plecy wygięte w jednakowy sposób, pracują tylko nogi. Najlepiej, gdy przez cały czas biodra i pięty znajdują się w jednej linii, nie wypychamy kolan do przodu(nie powinny wysuwać się dalej niż końce palców stóp). Schodzimy w dół do momentu, gdy zanika kontrola pracy mięsni czworogłowych, a ich rozciągnięcie jest maksymalne. Rozpoczynamy powrót do pozycji wyjściowej, wypychając się piętami podnosimy się w gorę, jednocześnie wypychając biodra w przód, aż do pozycji startowej. " +
+                "Drugą wersją tego ćwiczenia są tzw. ”półprzysiady” lub „płytkie” przysiady, można je wykonać również na suwnicy Smitha." +
+                " Różnica polega na mniejszym zakresie ruchu-opuszczamy się jedynie do momentu, gdy nasze nogi ugną się pod kątem równym lub nieco mniejszym, niż 90 stopni.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 7
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 18,
+                Name = "HACK-PRZYSIADY",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: wszystkie głowy mięsni czworogłowych ud" +
+                "\nWykonanie: Ćwiczenie różni się od zwykłych przysiadów ułożeniem sztangi(z tyłu za plecami, pod pośladkami w wyprostowanych rękach)i, co za tym idzie bardziej pionową pozycją tułowia w trakcie wykonania ćwiczenia. " +
+                "Ze względu na technikę wykonania i ułożenie sztangi ciężar, jaki użyjemy w tym ćwiczeniu będzie mniejszy, niż w zwykłych przysiadach. " +
+                "Pozycja wyjściowa to wyprostowany tułów, klatka wypchnięta ku przodowi, nogi w rozkroku na szerokość barków, ramiona wyprostowane wzdłuż tułowia, w dłoniach gryf sztangi(trzymany za plecami). Z tej pozycji wykonujemy przysiad do momentu, gdy nasze nogi będą ugięte pod kątem 90 stopni lub nieco mniejszym." +
+                " Jednocześnie wypychamy kolana nieco do przodu, nie odrywając jednak stóp od podłoża-ciężar wypychamy z pięt." +
+                " Ćwiczenie można również wykonać przy pomocy suwnicy Smitha",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 7
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 19,
+                Name = "PRZYSIADY WYKROCZNE",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: przywodziciele krótkie i wielkie, w mniejszym stopniu głowy boczne i przyśrodkowe mięsni czworogłowych ud" +
+                "\nWykonanie: Pozycja wyjściowa taka, jak przy przysiadach zwykłych. Z tej pozycji stawiamy jedną noga krok do przodu(na tyle duży, by po wykonaniu przysiadu do momentu ugięcia nogi pod kątem 90 stopni-podudzia były prostopadle do podłogi, a uda równoległe), po czym wykonujemy na nodze wykrocznej przysiad, na tyle głęboki, by noga ugięła się pod kątem ok.90 stopni. " +
+                "Po czy wracamy do pozycji wyjściowej i wykonujemy to samo, ale drugą nogą. " +
+                "Noga nie ćwiczona w trakcie przysiadu lekko ugięta w kolanie, a w trakcie, gdy noga wykroczne jest wysunięta do przodu- czasowo przylega do podłogi tylko palcami(noga nie trenowana). " +
+                "Wdech robimy w momencie stawiania kroku, wydech-w trakcie wstawania z przysiadu. " +
+                "Do tego ćwiczenia można użyć zarówno sztangi(trzymanej na karku), jak i sztangielek(trzymanych w opuszczonych luźno obok tułowia rękach). " +
+                "Istnieje również bardzo podobne(pod względem zaangażowania mięśni) ćwiczenie-„PRZYSIAD ROZDZIELNY”- polegające na wykonywaniu przysiadów na nodze wykrocznej w wykroku. " +
+                "Wykonuje się kilka-kilkanaście przysiadów na jednej nodze, po czym zmienia się ćwiczoną nogę.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 7
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 20,
+                Name = "WYSOKI STEP ZA SZTANGĄ/SZTANGIELKAMI.",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: przywodziciele krótkie i wielkie, w mniejszym stopniu głowy boczne i przyśrodkowe mięsni czworogłowych ud" +
+                "\nWykonanie: Do ćwiczenia potrzebna będzie, poza obciążeniem mocna i stabilna ławka(lub wysoki podest).Stajemy w lekkim rozkroku, nieco węższym, niż barki, przed ławka(podestem)- pozycja, jak do przysiadów." +
+                " Jako ciężar stosujemy sztangę trzymaną na barkach z tyłu, lub sztangielki trzymane w dłoniach, opuszczone luźno obok tułowia. " +
+                "Z tej pozycji wykonujemy wstępowanie na jednej nodze na ławkę, po czym dostawiamy drugą nogę i przez moment stoimy na ławce na wyprostowanych nogach i przy napiętych mięśniach. Powrotny ruch jest odwrotnością wstępowania-zstępowaniem." +
+                " Powietrza nabieramy przed rozpoczęciem wstępowania na ławkę- wypuszczamy, gdy obie nogi znajdą się na ławce." +
+                " Ważne jest, by każde powtórzenie zaczynać od innej nogi(raz lewą, raz prawą), gdyż właśnie noga, która wstępujemy na ławkę jako pierwszą, jest trenowana.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 7
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 21,
+                Name = "PROSTOWNIE NÓG W SIADZIE",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: W zależności od ułożenia stóp zaangażowane różne głowy mięśni czworogłowych ud" +
+                "\nWykonanie: siadamy na siodle maszyny(ławki), dobrze gdy mamy oparcie-zapewnia ono lepszą stabilność tułowia, dłońmi chwytamy za uchwyt(lub krawędź) maszyny. " +
+                "Nogi ugięte w kolanach, zaparte o drążek maszyny na stopami(na wysokości kostek). " +
+                "Z tej pozycji wykonujemy ruch prostowania nóg do pełnego wyprostu w stawach kolanowych. " +
+                "W pozycji wyprostowanej zatrzymujemy ruch przez chwilę dla lepszego napięcia mięśni. Po czym powracamy do pozycji wyjściowej. " +
+                "Powrót w tempie wolnym i pod pełną kontrolą ciężaru." +
+                " Powietrze nabieramy przed rozpoczęciem prostowania, wypuszczamy je, gdy kończymy prostowanie nóg.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 7
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 22,
+                Name = "UGINANIE NÓG W LEŻENIU",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: mięśnie dwugłowe ud, mięśnie półścięgniste, mięśnie smukłe i mięśnie krawieckie." +
+                "\nWykonanie: Ćwiczenie to wykonujemy na specjalnej maszynie,lub za pomocą wyciągu i specjalnym opasek na nogi. Kładziemy się na brzuchy tak, by poza ławkę wystawały jedynie podudzia poniżej kolan, nogi wyprostowane w kolanach, zaparte o drążek maszyny na wysokości ścięgien Achillesa(nad piętami), dłonie na uchwytach(lub krawędzi) maszyny." +
+                " Z tej pozycji wykonujemy ruch maksymalnego uginania nóg w kolanach." +
+                " W końcowym momencie uginania zatrzymujemy ruch przez chwilę dla lepszego napięcia mięśni. Po czym powracamy do pozycji wyjściowej." +
+                " Powrót w tempie wolnym i pod pełną kontrolą ciężaru. " +
+                "Biodra(jak i reszta tułowia) przez cały czas trwania ćwiczenia przylegają do powierzchni ławki. Powietrze nabieramy przed rozpoczęciem uginania, wypuszczamy je, gdy kończymy uginanie nóg. " +
+                "Ćwiczenie to można wykonać również w pozycji stojąc(jednonóż)-na maszynie, lub wyciągu",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 7
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 23,
+                Name = "UGINANIE NÓG W LEŻENIU",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: mięśnie dwugłowe ud, mięśnie półścięgniste, mięśnie smukłe i mięśnie krawieckie." +
+                "\nWykonanie: Ćwiczenie to wykonujemy na specjalnej maszynie,lub za pomocą wyciągu i specjalnym opasek na nogi. Kładziemy się na brzuchy tak, by poza ławkę wystawały jedynie podudzia poniżej kolan, nogi wyprostowane w kolanach, zaparte o drążek maszyny na wysokości ścięgien Achillesa(nad piętami), dłonie na uchwytach(lub krawędzi) maszyny." +
+                " Z tej pozycji wykonujemy ruch maksymalnego uginania nóg w kolanach." +
+                " W końcowym momencie uginania zatrzymujemy ruch przez chwilę dla lepszego napięcia mięśni. Po czym powracamy do pozycji wyjściowej." +
+                " Powrót w tempie wolnym i pod pełną kontrolą ciężaru. " +
+                "Biodra(jak i reszta tułowia) przez cały czas trwania ćwiczenia przylegają do powierzchni ławki. Powietrze nabieramy przed rozpoczęciem uginania, wypuszczamy je, gdy kończymy uginanie nóg. " +
+                "Ćwiczenie to można wykonać również w pozycji stojąc(jednonóż)-na maszynie, lub wyciągu",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 7
+
+            });
 
 
             //Add type of workouts
@@ -530,7 +692,7 @@ namespace Api.Data
                 Id = 4,
                 Name = "Trening Siłowy",
                 Description = "Trening na poprawę siły-każda grupa mięśniowa trenowana raz w tygodniu. Trening na dużych ciężarach z małą " +
-                "ilością powtórzeń w seriach(8-1).Przerwy pomiędzy seriami wydłużamy do 3-5 minut. Na duże grupy wykonujemy 8-10 serii," +
+                "ilością powtórzeń w seriach(8-10).Przerwy pomiędzy seriami wydłużamy do 3-5 minut. Na duże grupy wykonujemy 8-10 serii," +
                 " na małe 6-8 serii(plus 2-3 serie rozgrzewkowe w obu przypadkach)." +
                 "Trening oparty na podstawowych ćwiczeniach(wyciskania, przysiady, uginania i wyprosty ramion, itp.) " +
                 "z użyciem wolnych ciężarów(sztanga, sztangielki).Czas trwania: 4-8 tygodni(nie dłużej) Oczywiście jest to tylko bardzo " +
@@ -570,13 +732,26 @@ namespace Api.Data
                 "W zasadzie wszystkie podane niżej ćwiczenia nadają się do wykonania na każdym poziomie zaawansowania, jednak niektóre zalecane są dla ćwiczących z pewnym stażem treningowym, " +
                 "ze względu na trudną technikę i duże prawdopodobieństwo kontuzji(przy niewłaściwej technice wykonania). " +
                 "Do takich ćwiczeń należą „martwe ciągi” wszelkiego typu i wiosłowanie ze sztangą w opadzie. " +
-                "Aby ustrzec się kontuzji, które w przypadku tej grupy mięśniowej są tak częste i niebezpieczne należy bezwzględnie przestrzegać zasad poprawnego treningu-oto podstawowe z nich:"+
+                "Aby ustrzec się kontuzji, które w przypadku tej grupy mięśniowej są tak częste i niebezpieczne należy bezwzględnie przestrzegać zasad poprawnego treningu-oto podstawowe z nich:" +
                 "\n- przestrzeganie właściwej techniki ćwiczeń, " +
                 "\n- elementem, który najczęściej jest przyczyną(poza małym doświadczeniem)błędów technicznych, jest wykonywanie ćwiczeń ze zbyt dużym obciążeniem " +
                 "\n- aby nie „przeszkadzało” ono w poprawnym wykonaniu ćwiczenia powinno być dobrane ściśle do naszych możliwości w każdym konkretnym ćwiczeniu," +
                 "\n- kolejnym elementem właściwej techniki jest tempo i płynność ruchów-tempo powinno być średnie i wolne " +
                 "\n- tylko w takim wykonywane są ćwiczenia na mięśnie grzbietu, ruch powinien odbywać się płynnie, koniecznie z wyeliminowaniem wszelkiej gwałtowności," +
                 "\n- właściwa pozycja / ułożenie ciała - bardzo istotny element-zaniedbany powoduje kontuzje-najczęstszym błędem jest robienie tzw. ”kociego grzbietu”, czyli wyginania w łuk grzbietu-szczególnie jego dolnego odcinka.Jest to spowodowane brakiem koncentracji i nadmiernym ciężarem użytym w ćwiczeniu."
+
+            });
+
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 7,
+                Name = "Trening Siłowy - Mięśni Nóg",
+                Description = "Mięśnie nóg są bardzo mocne i wytrzymałe. " +
+                "Każdego dnia muszą przenosić ciężar reszty ciała, utrzymując się w pionie. Warto więc o nie zadbać." +
+                " Wprowadzając ćwiczenia na nogi do planu treningowego, warto pamiętać o tym, by zaczynać od największych ciężarów." +
+                " Pozwoli to wykonać ćwiczenia poprawnie i zmniejszy ryzyko kontuzji wywołanej zmęczeniem, które jest nieodłączną częścią każdego treningu." +
+                " Wysiłek warto rozpocząć od ćwiczeń wielostawowych i powoli przechodzić w stronę tych izolujących daną grupę mięśniową." +
+                " Zanim przejdziemy do treningu, należy rozgrzać mięśnie i stawy, co zminimalizuje ryzyko kontuzji."
 
             });
 
