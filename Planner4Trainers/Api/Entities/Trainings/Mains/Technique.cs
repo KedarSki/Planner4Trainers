@@ -6,7 +6,7 @@
         public string Name { get; set; }
         public string Exercise { get; set; }
         public int TimeLength { get; set; }
-        public string Descirption { get; set; }
-        public string ExerciseTypeId { get; set; }
+        public string Description { get; set; }
+        public int ExerciseTypeId { get; set; }
     }
 }

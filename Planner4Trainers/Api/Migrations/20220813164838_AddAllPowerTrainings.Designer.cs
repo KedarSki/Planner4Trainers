@@ -3,6 +3,7 @@ using Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(Planner4TrainersDbContext))]
-    partial class Planner4TrainersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220813164838_AddAllPowerTrainings")]
+    partial class AddAllPowerTrainings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,81 +101,6 @@ namespace Api.Migrations
                             Id = 10,
                             Description = "a wstępie należy zaznaczyć, że żadne nawet najbardziej wyszukane i najintensywniejsze ćwiczenia mięśni brzucha nie są w stanie zastąpić odpowiednio zbilansowanej diety. Jeśli nie będziemy jej przestrzegać, to owszem możemy wytrenować sobie mocne i silnie rozbudowane mięśnie brzucha, ale pozostaną one ukryte pod warstwą tkanki tłuszczowej i będą niewidoczne, a co za tym idzie nie będą mogły spełniać jednej ze swoich ról-mianowicie roli estetycznej. Panuje błędne przekonanie, że trening mięśni brzucha jest sam dla siebie rozgrzewką.(może dlatego, że wiele osób traktuje ćwiczenia na brzuch, jako rozgrzewkę przed treningami innych mięśni). Nic bardziej mylnego. Trening mięśni brzucha powinien być poprzedzony rozgrzewką-nie gorszą niż przed treningiem innych partii umięśnienia. Prawidłowa rozgrzewka przed treningiem mięśni brzucha zawiera, poza ćwiczeniami aerobowymi( zwiększającymi temperaturę mięśni)-jak przy innych grupach mięśniowych, także odpowiednie ćwiczenia angażujące dolny odcinek grzbietu- np. skłony, skręty tułowia, krążenia bioder jak również mięśnie prostowniki bioder(bardzo aktywne w treningu mięśni brzucha). Kolejnym błędem popełnianym w treningu mięśni brzucha są zbyt częste treningi, a co za tym idzie, zbyt krótki odpoczynek. ",
                             Name = "Trening Siłowy - Mięśni Brzucha "
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Description = "Wytrzymałość to zdolność organizmu do wykonywania wysiłku fizycznego przez długi czas, bez uszczerbku dla jego funkcji życiowych. To umiejętność zminimalizowania zmęczenia nabywana w czasie treningu. Wytrzymałość szybkościowa to umiejętność wykonywania szybkich ruchów na niezmiennym poziomie, np. w trakcie walki. Wytrzymałość jest fundamentem działań boksera pozwalającym mu na wykorzystanie wszystkich środków technicznych przez cały czas trwania walki. Jest ona tym ważniejsza, im dłużej trwa wysiłek fizyczny.\n Dobrą metodą trenowania wytrzymałości szybkościowej jest trening obwodowy. Liczba stacji powinna zawierać się w liczbie od 8 do 12",
-                            Name = "Trening Wytrzymałościowy - Wytrzymałość szybkościowa"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "Przygotowanie techniczne – proces opanowywania takiego zasobu zadań ruchowych (techniki działań), który w połączeniu z cechami budowy ciała, sprawności itp. pozwala uzyskiwać racjonalne i efektywnie najlepsze wyniki sportowe w sposób zgodny z przepisami obowiązującymi w danej dyscyplinie. \nDobra technika powinna charakteryzować się:\n- przyjęciem jednoznacznego celu ruchu;\n- dobrze zaznaczonym przedziałem czasowo - przestrzennym(faza przygotowawcza, główna i końcowa ruchu) \n- poprawnie wyrażonym przedziałem dynamiczno - czasowym(rytm, płynna kolejność napięć i rozluźnień)\n- wysoką elastycznością(umiejętne pokonywanie i wykorzystanie oporów środowiska)\n- wczesnym przewidywaniem ruchu(właściwe ustawienie koncepcji ruchu)\n- przewidywaniem ruchów obcych(przeciwnik, wiatr, śliska nawierzchnia itp.)\n WAŻNE: Trening techniki sportowej powinien zostać wykonany w parze z partnerem, który jest dobrany wzrostowo oraz wagowolub na tarczy u trenera. Podana technika w aplikacji jest techniką przykładową i oczywiście może ona być stosowana wymiennie w zależności od koncepcji trenerskiejkoncpecji treningu nadaną przez trenera.",
-                            Name = "Technika sportowa – sposób wykonania zadania ruchowego"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Description = "Przygotowanie szybkościowe jest stosowane w okresie bezpośrednio przed startowym. W tym wypadku należy trenować szybkość ostatni tydzień przed startem. Szybkie wydolnościowe serie na worku od kilkudziesięciu do kilku sekund na 'rundę'. ",
-                            Name = "Trening Szybkościowo-wytrzymałościowy"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Description = "Ćwiczenia końcowe są już elementem uspokojenia pracy krążenia. Są one nadal wykonywane dokładnie natomiast już z innym natężeniem. ",
-                            Name = "Ćwiczenia końcowe"
-                        });
-                });
-
-            modelBuilder.Entity("Api.Entities.Trainings.Finals.FinalExercise", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ExerciseTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TimeLength")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Finals");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 62,
-                            Description = "Jedno z ćwiczeń końcowych jest oczywiście skok na skakance. Skoki wykonujemy przez całę 3 minuty.",
-                            ExerciseTypeId = 14,
-                            Name = "Skakanka",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 63,
-                            Description = "Walka z cienie. Długie dokładnie ruchy ",
-                            ExerciseTypeId = 14,
-                            Name = "Walka z cieniem",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Description = "Brzuszki lub inne ćwiczenia na mięśnie brzucha. Łącznie 120 powtórzeń lub więcej",
-                            ExerciseTypeId = 14,
-                            Name = "Ćwiczenia na brzuch",
-                            TimeLength = 120
                         });
                 });
 
@@ -521,17 +448,17 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Descirption")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ExerciseTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("Exercise")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExerciseId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Rounds")
-                        .HasColumnType("int");
 
                     b.Property<int>("TimeLength")
                         .HasColumnType("int");
@@ -539,44 +466,6 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Speed");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 58,
-                            Description = "Szybkie serie uderzania na worek po upływie trzydziestu sekund następuje zmiana zawodnika. Takich rund zawodnik powinien wykonać 12. Przerwa to również trzydzieści sekund",
-                            ExerciseTypeId = 13,
-                            Name = "Seria na worek 30 sekund",
-                            Rounds = 12,
-                            TimeLength = 30
-                        },
-                        new
-                        {
-                            Id = 59,
-                            Description = "Szybkie serie uderzania na worek po upływie dwudziesty sekund następuje zmiana zawodnika. Takich rund zawodnik powinien wykonać szesnaście. Przerwa powinna wyności czterdzieści sekund.",
-                            ExerciseTypeId = 13,
-                            Name = "Seria na worek 20 sekund",
-                            Rounds = 16,
-                            TimeLength = 20
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Description = "Szybkie serie uderzania na worek po upływie piętnastu sekund następuje zmiana zawodnika. Takich rund zawodnik powinien wykonać osiemnaście. Przerwa powinna wyności czterdzieści pięć sekund.",
-                            ExerciseTypeId = 13,
-                            Name = "Seria na worek 15 sekund",
-                            Rounds = 18,
-                            TimeLength = 15
-                        },
-                        new
-                        {
-                            Id = 61,
-                            Description = "Szybkie serie uderzania na worek po upływie dziesięciu sekund następuje zmiana zawodnika. Takich rund zawodnik powinien wykonać osiemnaście. Przerwa powinna wyności pięćdziesiąt sekund.",
-                            ExerciseTypeId = 13,
-                            Name = "Seria na worek 10 sekund",
-                            Rounds = 24,
-                            TimeLength = 10
-                        });
                 });
 
             modelBuilder.Entity("Api.Entities.Trainings.Mains.Strength", b =>
@@ -587,11 +476,14 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Descirption")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ExerciseTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("Exercise")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExerciseTypeId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -602,104 +494,6 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Strength");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 35,
-                            Description = "Skakanka musi zostać dobrana tak aby ćwiczenie było wykonywane swobodnie dla trenującego",
-                            ExerciseTypeId = 11,
-                            Name = "SKOKI NA SKAKANCE",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Description = "Dynamiczne przysiady z obciążeniem. Przysiady mogą być uzupełnione o wspięcie na palce lub o dodatkowy wyskokna prostych nogach\n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego. Jeżeli zawodnik jest bardzo młody można zastosowaćprzysiad bez obciążenia (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "PRZYSIADY Z OBCIĄŻENIEM (CIĘŻAR DO 10KG)",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Description = "Dynamiczne ciosy z wyrzutem piłki lekarskiej w stronę partnera. Ciosy proste, sierpowe oraz z dołu.\n WAŻNE: Bardzo ważne, aby ciężar piłki został dobrany do wieku oraz predyspozycji trenującego. Partner również powinien zostać dobranymniej więcej wagowo i wzrostowo (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "RZUT PIŁKĄ LEKARSKĄ",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Description = "Dynamiczne ciosy trzymając hantle. Ciosy proste, sierpowe oraz z dołu.\n WAŻNE: Bardzo ważne, aby ciężar hantli (do 5kg.) został dobrany do wieku oraz predyspozycji trenującego. (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "ĆWICZENIA Z HANTLAMI",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Description = "Dynamiczne ciosy trzymając hantle. Ciosy proste, sierpowe.\n WAŻNE: Bardzo ważne, aby ciężarki (do 2kg.) zostały dobrane do wieku oraz predyspozycji trenującego. (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "ĆWICZENIA Z CIĘŻARKAMI",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Description = "Dynamiczny bieg bokserski - ciosy z wyrzutem ciężarków.\n WAŻNE: Bardzo ważne, aby ciężarki (do 2kg.) zostały dobrane do wieku oraz predyspozycji trenującego. (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "BIEG BOKSERSKI Z CIĘŻARKAMI",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Description = "Dynamiczna walka z cieniem - ciosy z wyrzutem ciężarków.\n WAŻNE: Bardzo ważne, aby ciężarki (do 1,5kg.) zostały dobrane do wieku oraz predyspozycji trenującego. (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "WALKA Z CIENIEM Z CIĘŻARKAMI",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Description = "Dowolne ćwiczenie na mięśnie brzucha (preferowane skłony do lekko zgiętych nóg).Dodatkowo można dołożyć obciążenie w formie krążka do sztangi.\n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego. (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "BRZUSZKI",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Description = "Dynamiczne pompki przez całe 3 minuty. Zamiast pompek ćwiczenie można zastąpić np dynamicznym wyrzutem krążka lub sztangi (Do 15kg) stojąc na lekkougiętych nogach, ",
-                            ExerciseTypeId = 11,
-                            Name = "POMPKI",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Description = "Dynamiczne podciąganie nachwytem na drążku. Pamiętajmy, że trzy minuty podciągania to mimo wszystko dość długo. W takim wypadku jeżeli zawodniknie może podciągać się na drążku przez trzy minuty bez przerwy powinien wykonywać ćwiczenie aż do całkowitego zmęczenia mięśniowego, następnie po przerwie około 30 sekundpowinien natychmiast powrócić do ćwiczenia aby następnie znów wykonać je aż do kompletnego zmęczenia mięśni.",
-                            ExerciseTypeId = 11,
-                            Name = "PODCIĄGANIE NA DRĄŻKU (NACHWYTEM)",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Description = "Krążenia krążka o wadzę do 15kg. Krążenie ciała powinno zostać wykonane w pozycji stabilnej na lekko ugiętych nogachtak aby nieodrywać stóp od podłoża. Celem takiego ćwiczenia jest wyizolowanie  \n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego. (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "MACHANIE CIĘŻAREM PO OKRĘGU W JEDNĄ A POTEM W DRUGĄ STRONĘ (CIĘŻAR DO 15KG.)",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Description = "Krążenia krążka o wadzę do 15kg. Krążenie ciała powinno zostać wykonane w pozycji stabilnej na lekko ugiętych nogachtak aby nieodrywać stóp od podłoża. Celem takiego ćwiczenia jest wyizolowanie  \n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego. (Obciążenie powinien dobierać wykwalifikowany trener)",
-                            ExerciseTypeId = 11,
-                            Name = "MACHANIE CIĘŻAREM PO OKRĘGU W JEDNĄ A POTEM W DRUGĄ STRONĘ (CIĘŻAR DO 15KG.)",
-                            TimeLength = 3
-                        });
                 });
 
             modelBuilder.Entity("Api.Entities.Trainings.Mains.Technique", b =>
@@ -710,14 +504,14 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Descirption")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Exercise")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ExerciseTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("ExerciseTypeId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -728,96 +522,6 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Technique");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 47,
-                            Description = "Podstawa zarówno Polskiego jak i światowego dobrego boksu. Lewy cios prosty powinien zostać wykonany z zachowaniem zasad wykonania prawidłowego ciosu a więc zachować prawidłowy skręt bioder w celu przedłużenia ciosu.\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY PROSTY",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Description = "Bezpośredni prawy cios prosty\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "PRAWY PROSTY",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Description = "Ciosy proste w kombinacji dwóch ciosów prostych.\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub/i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY + PRAWY PROSTY",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Description = "Ciosy proste w kombinacji trzech ciosów prostych.\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY - LEWY PROSTY",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Description = "Kombinacja ciosów prostych i lewego ciosu sierpowego\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY - LEWY SIERP",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Description = "Kombinacja ciosów prostych i prawego ciosu sierpowego\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY - UNIK - PRAWY SIERP",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Description = "Kombinacja ciosów prostych i lewego ciosu z dołu\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY - UNIK - LEWY Z DOŁU",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Description = "Kombinacja ciosów prostych i prawego ciosu z dołu\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY - UNIK - PRAWY Z DOŁU",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Description = "Kombinacja ciosów z dołu i lewego ciosu sierpowego\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY Z DOŁU - LEWY SIERP",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 56,
-                            Description = "Kombinacja ciosów z dołu i prawego ciosu sierpowego\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY Z DOŁU - UNIK - PRAWY SIERP",
-                            TimeLength = 3
-                        },
-                        new
-                        {
-                            Id = 57,
-                            Description = "Kombinacja ciosów z dołu i sierpowych\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
-                            ExerciseTypeId = 12,
-                            Name = "LEWY - PRAWY Z DOŁU - UNIK - PRAWY SIERP - LEWY SIERP",
-                            TimeLength = 3
-                        });
                 });
 
             modelBuilder.Entity("Api.Entities.Trainings.Warmups.WarmupOnGo", b =>

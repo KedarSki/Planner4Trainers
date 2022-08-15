@@ -1,4 +1,5 @@
 ﻿using Api.Entities.Trainings;
+using Api.Entities.Trainings.Finals;
 using Api.Entities.Trainings.Mains;
 using Api.Entities.Trainings.Warmups;
 using Microsoft.EntityFrameworkCore;
@@ -592,7 +593,7 @@ namespace Api.Data
             {
                 Id = 20,
                 Name = "WYSOKI STEP ZA SZTANGĄ/SZTANGIELKAMI.",
-                Description = "Główne mięśnie zaangażowane w ćwiczeniu: przywodziciele krótkie i wielkie, w mniejszym stopniu głowy boczne i przyśrodkowe mięsni czworogłowych ud" +
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: Przywodziciele krótkie i wielkie, w mniejszym stopniu głowy boczne i przyśrodkowe mięsni czworogłowych ud" +
                 "\nWykonanie: Do ćwiczenia potrzebna będzie, poza obciążeniem mocna i stabilna ławka(lub wysoki podest).Stajemy w lekkim rozkroku, nieco węższym, niż barki, przed ławka(podestem)- pozycja, jak do przysiadów." +
                 " Jako ciężar stosujemy sztangę trzymaną na barkach z tyłu, lub sztangielki trzymane w dłoniach, opuszczone luźno obok tułowia. " +
                 "Z tej pozycji wykonujemy wstępowanie na jednej nodze na ławkę, po czym dostawiamy drugą nogę i przez moment stoimy na ławce na wyprostowanych nogach i przy napiętych mięśniach. Powrotny ruch jest odwrotnością wstępowania-zstępowaniem." +
@@ -641,17 +642,539 @@ namespace Api.Data
             modelBuilder.Entity<Power>().HasData(new Power
             {
                 Id = 23,
-                Name = "UGINANIE NÓG W LEŻENIU",
-                Description = "Główne mięśnie zaangażowane w ćwiczeniu: mięśnie dwugłowe ud, mięśnie półścięgniste, mięśnie smukłe i mięśnie krawieckie." +
-                "\nWykonanie: Ćwiczenie to wykonujemy na specjalnej maszynie,lub za pomocą wyciągu i specjalnym opasek na nogi. Kładziemy się na brzuchy tak, by poza ławkę wystawały jedynie podudzia poniżej kolan, nogi wyprostowane w kolanach, zaparte o drążek maszyny na wysokości ścięgien Achillesa(nad piętami), dłonie na uchwytach(lub krawędzi) maszyny." +
-                " Z tej pozycji wykonujemy ruch maksymalnego uginania nóg w kolanach." +
-                " W końcowym momencie uginania zatrzymujemy ruch przez chwilę dla lepszego napięcia mięśni. Po czym powracamy do pozycji wyjściowej." +
-                " Powrót w tempie wolnym i pod pełną kontrolą ciężaru. " +
-                "Biodra(jak i reszta tułowia) przez cały czas trwania ćwiczenia przylegają do powierzchni ławki. Powietrze nabieramy przed rozpoczęciem uginania, wypuszczamy je, gdy kończymy uginanie nóg. " +
-                "Ćwiczenie to można wykonać również w pozycji stojąc(jednonóż)-na maszynie, lub wyciągu",
+                Name = "WSPIECIA NA PALCE W STANIU",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: obie głowy mięsni brzuchatych łydek, mięśnie płaszczkowate i strzałkowe długie." +
+                "\nWykonanie: Ćwiczenie to można wykonywać zarówno przy pomocy sztangi, suwnicy Smitha lub specjalnej maszyny. Można wykonywać je również bez obciążenia, a także jednonóż. " +
+                "Sztangę można również zastąpić sztangielką trzymaną w dłoni(po tej samej stronie, co ćwiczona noga: lewa noga- lewa ręka, prawa noga- prawa ręka). " +
+                "Istotnym elementem w tym ćwiczeniu jest użycie grubej podkładki pod palce stóp, która pozwala zwiększyć znacznie zakres ruchu, a co za tym idzie-poprawić efektywność ćwiczenia. " +
+                "Pozycja wyjściowa, to wyprostowany tułów i plecy, nogi wyprostowane w kolanach, rozkrok 25-30 cm, palce stóp(wraz ze stawami łączącymi je ze śródstopiem) na podkładce-mięsnie łydek rozciągnięte maksymalnie. Z takiej pozycji rozpoczynamy wspięcia. " +
+                "Ruch powinien być wolny i dokładny, ze stałym „czuciem” pracy mięśni. " +
+                "Należy unikać odbijania się pięt od podłogi.",
                 Repeats = 10,
                 Series = 8,
                 ExerciseTypeId = 7
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 24,
+                Name = "WYCISKANIE SZTANGI SPRZED GŁOWY",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: przednie i boczne aktony mięsni naramiennych, mięśnie trójgłowe ramion." +
+                "\nWykonanie: Ćwiczenie to można wykonywać zarówno w pozycji stojącej (tzw. żołnierskie wyciskanie) jak i siedzącej. " +
+                "Do ćwiczenia można również użyć tzw. suwnicy Smitha ,lub maszyn",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 8
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 25,
+                Name = "WYCISKANIE SZTANGI ZZA GŁOWY",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: przednie i boczne  aktony mięśni naramiennych,mięśnie trojgłowe ramion." +
+                "\nWykonanie: ćwiczenie to, podobnie jak poprzednie można wykonywać zarówno w pozycji stojącej, jak i siedzącej. " +
+                "Podobnie ,jak w ćwiczeniu poprzednim można użyć suwnicy Smitha lub maszyn.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 8
+
+            });
+
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 26,
+                Name = "UNOSZENIE SZTANGIELEK BOKIEM W GÓRĘ",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: przednie i boczne  aktony mięśni naramiennych,mięśnie trojgłowe ramion." +
+                "\nWykonanie: kolejne ćwiczenie, które można wykonywać zarówno w pozycji stojącej, jak i siedzącej" +
+                "dłonie ze sztangielkami przez cały czas trzymamy tak," +
+                "aby ich wewnętrzne części skierowane były do przodu(inna wersja przewiduje uchwyt młotkowy - dłonie zwrócone w czasie całego ruchu palcami w kierunku głowy).Ruch powinien odbywać się  pod pełną kontrolą ciężaru-ważna jest również pozycja podczas ćwiczenia - podobna do pozycji przy wyciskaniu sztangi. (wypchnięta klatka, naturalna krzywizna kręgosłupa)",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 8
+
+            });
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 27,
+                Name = "UNOSZENIE SZTANGIELEK W OPADZIE TŁOWIA",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: jest to ćwiczenie na tylną część mięśni naramiennych," +
+                "\nWykonanie: ćwiczenie wykonujemy w pozycji siedzącej lub stojącej -" +
+                " W pozycji stojącej: tułów ustawiamy w położeniu zbliżonym do prostopadłego do podłoża i staramy się w trakcie ruchu nie wykonywać nim tzw. bujania-utrzymujemy możliwie sztywno. " +
+                "Z pozycji wyjściowej ruchem kolistym unosimy sztangielki maksymalnie w górę, utrzymując przez cały czas ćwiczone mięśnie w stanie napięcia. " +
+                "Staramy się, aby w ruchu powrotnym sztangielki poruszały się po tym samym torze. " +
+                "Jak w poprzednim ćwiczeniu ,można w pozycji szczytowej przytrzymać przez chwilę sztangielki w celu dodatkowego napięcia mięśni",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 8
+
+            });
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 28,
+                Name = "WYCISKANIE „FRANCUSKIE”SZTANGI W SIADZIE",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: głowy boczne i przyśrodkowe mięśni trójgłowych ramion" +
+                "\nWykonanie: Ćwiczenie to rozwija wszystkie głowy tricepsów ze szczególnym wskazaniem na głowę długa." +
+                " Można je wykonywać zarówno w pozycji stojącej, jak i siedzącej. W pozycji siedzącej ponadto można zastosować oparcie(np. na ławce skośnej). " +
+                "Polepsza to stabilność, a co za tym idzie pozwala lepiej skoncentrować się na wykonaniu ćwiczenia. Możemy użyć sztangi prostej i łamanej. Łamana ma tę zaletę, " +
+                "że pozwala na zwiększenie zakresu ruchu i zmniejsza naprężenia powstające w nadgarstkach. Łokcie powinny trwać nieruchomo(jak najbliżej głowy) podczas ćwiczenia. " +
+                "Zakres ruchu:od pełnego wyprostu ramion, do pełnego zgięcia w łokciach. Przy pełnym zgięciu ramion, gdy sztanga znajduje się za głową, nie powinno się tracić nad nią kontroli(swobodne opuszczenie jej przeciąża mocno stawy łokciowe, co może prowadzić do kontuzji).Ćwiczenie można wykonywać również zastępując sztangę drążkiem wyciągu dolnego (prostym lub łamanym, bądź grubym sznurem zakończonym węzłami-stosujemy wtedy uchwyt równoległy). " +
+                "Można również wykonywać nieco inną odmianę ćwiczenia ze sztangielką trzymaną oburącz. " +
+                "Przy tej wersji należy pamiętać, o jednakowym angażowaniu w ćwiczenie obu rąk.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 9
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 29,
+                Name = "PROSTOWNIE RAMIENIA ZE SZTANGIELKĄ W OPADZIE TUŁOWIA",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: głowy boczne i przyśrodkowe mięśni trójgłowych ramion" +
+                "\nWykonanie: Przy wyprostowanych plecach pochylamy się do przodu i opieramy jedną ręką o ławkę. W drugiej trzymamy sztangielkę i unosimy ramię nieco ponad linię pleców(nie niżej)-przedramię prostopadle do podłogi. " +
+                "Z tej pozycji pracując tylko tricepsem prostujemy ramię w łokciu unosząc ciężar aż do pełnego wyprostu. " +
+                "W pozycji końcowej zatrzymujemy na moment ruch dla lepszego napięcia mięśni." +
+                " Musimy zwracać szczególną uwagę na to, by w trakcie ćwiczenia w ruchu było jedynie przedramię(praca w stawie łokciowym).Nie wolno dopuszczać do bujania ramieniem. " +
+                "Ruch opuszczania wolniejszy od unoszenia, z pełną kontrolą ciężaru..",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 9
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 30,
+                Name = "POMPKI W PODPORZE TYŁEM",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: wszystkie głowy mięśni trójgłowych ramion" +
+                "\nWykonanie: Wspaniałe ćwiczenie na zakończenie treningu-maksymalnie „dopompowuje” tricepsy." +
+                " Polega na wykonywaniu ruchów opuszczania i unoszenia tułowia podpierając się o ławkę z tyłu, a nogi pozostają (działając jak zawias)oparte na drugiej ławce(dobrze jest, gdy ławka ta jest nieco wyższa od tej, na której trzymamy ręce). " +
+                "Ramiona prostujemy do końca dla lepszego napięcia mięśni. Ruch opuszczania powolny, unoszenia nieco szybszy. Ćwiczenie to można wykonywać z uchwytem, lub ustawiając ławkę wzdłuż chwytamy ją na końcu po bokach(uchwyt równoległy). " +
+                "Dla zwiększenia trudności ćwiczenia można zastosować dodatkowe obciążenie kładąc np. krążek na uda.Można też wykonywać np. kilka-kilkanaście powtórzeń z obciążeniem, po czym partner zdejmuje nam ciężar, a my wykonujemy jeszcze kilka-kilkanaście powtórzeń. " +
+                "Taka metoda dodatkowo pobudzi mięśnie.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 9
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 31,
+                Name = "SKŁONY W LEŻENIU PŁASKO",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: mięśnie proste brzucha, skośne brzucha" +
+                "\nWykonanie:  Kładziemy się na materacu lub ławce. Nogi ugięte, ręce nad głową i unosimy tułów w górę. Pierwsza do góry unosi się głowa, potem barki, a na końcu reszta tułowia. " +
+                "Dla lepszego zaangażowania mięśni skośnych brzucha, w końcowej fazie unoszenia tułowia można wykonywać nim skręty. " +
+                "Jest to jednak wersja trudniejsza i bardziej narażająca na ewentualne kontuzje(mocniej obciąża dolne partie grzbietu)." +
+                "Nabieramy powietrza przed rozpoczęciem ruchu, a wypuszczamy je w trakcie unoszenia tułowia.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 10
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 32,
+                Name = "UNOSZENIE NÓG W ZWISIE NA DRĄŻKU",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: mięśnie proste brzucha, skośne brzucha, mięsnie zębate przednie" +
+                "\nWykonanie:Chwytamy drążek prosty nachwytem lub podchwytem, jeżeli mamy kłopot z dłuższym utrzymaniem się na drążku, możemy zastosować paski. Unosimy nogi jak najwyżej do brody. " +
+                "Można również w tym ćwiczeniu wprowadzić skręty tułowia w końcowej fazie unoszenia nóg, co mocniej zaangażuje do pracy mięśnie skośne brzucha." +
+                " Jeszcze inna wersja(mocno angażująca mięśnie skośne)polega na jednoczesnym skręcie bioder wraz z unoszeniem nóg. " +
+                "Osoby zaawansowane mogą w tym ćwiczeniu używać dodatkowego obciążenia zamocowanego do nóg, ale tylko jeżeli czują się na siłach-łatwo „przedobrzyć” i nabawić się bolesnej kontuzji. " +
+                "Tempo ruchu umiarkowane, bez zrywów. Im mniejsze ugięcie nóg w kolanach, tym większy stopień trudności ćwiczenia, większe zaangażowanie mięśni zginaczy bioder(przy zmniejszeniu pracy mięsni brzucha) i większe napięcia w dolnym odcinku grzbietu.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 10
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 33,
+                Name = "UNOSZENIE NÓG W PODPORZE",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: mięśnie proste brzucha, skośne brzucha." +
+                "\nWykonanie: Stajemy plecami do specjalnej podpory, ramiona opieramy na poziomych poprzeczkach podpory, dłońmi chwytamy uchwyty, w tym momencie znajdujemy się już ponad podłogą." +
+                " Z tej pozycji unosimy nogi w górę, w kierunku klatki piersiowej, jednocześnie uginając je w kolanach. Technika podobna, jak w unoszeniu nóg w zwisie, jednak mięśnie zaangażowane pod innym kątem. " +
+                "W tym ćwiczeniu również należy pamiętać o zachowaniu pełnego zakresu ruchu-zmniejszanie go prowadzi do skracania mięśni. Tempo ruchu umiarkowane, bez zrywów. " +
+                "Im mniejsze ugięcie nóg w kolanach, tym większy stopień trudności ćwiczenia, większe zaangażowanie mięśni " +
+                "zginaczy bioder(przy zmniejszeniu pracy mięsni brzucha) i większe napięcia w dolnym odcinku grzbietu.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 10
+
+            });
+
+            modelBuilder.Entity<Power>().HasData(new Power
+            {
+                Id = 34,
+                Name = "SKRĘTY TUŁOWIA",
+                Description = "Główne mięśnie zaangażowane w ćwiczeniu: skośne brzucha, proste brzucha, prostowniki grzbietu." +
+                "\nWykonanie: Ćwiczenie to można wykonać zarówno w pozycji siedzącej, jak i " +
+                "stojącej-na maszynie lub, jeśli takiej nie posiadamy-za pomocą gryfu sztangi(tylko nie „olimpijskiej”- może być zbyt ciężki)zaawansowani mogą pozwolić sobie na użycie pewnego obciążenia, oczywiście z umiarem. " +
+                "Zbyt duże przeciąża dolny odcinek kręgosłupa. " +
+                "W pozycji stojącej- stajemy w rozkroku szerszym niż barki, gryf kładziemy na karku, ramiona oparte szeroko na gryfie. " +
+                "W pozycji siedzącej(na maszynie) chwytamy rączki maszyny, tułów wyprostowany przez cały czas wykonania ćwiczenia, nogi w jednakowej pozycji(ugięte w kolanach i skierowane do przodu-najlepiej, gdy są zaparte- dla lepszej stabilizacji tułowia)w trakcie całego ćwiczenia.",
+                Repeats = 10,
+                Series = 8,
+                ExerciseTypeId = 10
+
+            });
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 35,
+                Name = "SKOKI NA SKAKANCE",
+                Description = "Skakanka musi zostać dobrana tak aby ćwiczenie było wykonywane swobodnie dla trenującego",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 36,
+                Name = "PRZYSIADY Z OBCIĄŻENIEM (CIĘŻAR DO 10KG)",
+                Description = "Dynamiczne przysiady z obciążeniem. Przysiady mogą być uzupełnione o wspięcie na palce lub o dodatkowy wyskok" +
+                "na prostych nogach" +
+                "\n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego. Jeżeli zawodnik jest bardzo młody można zastosować" +
+                "przysiad bez obciążenia (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 37,
+                Name = "RZUT PIŁKĄ LEKARSKĄ",
+                Description = "Dynamiczne ciosy z wyrzutem piłki lekarskiej w stronę partnera. Ciosy proste, sierpowe oraz z dołu." +
+                "\n WAŻNE: Bardzo ważne, aby ciężar piłki został dobrany do wieku oraz predyspozycji trenującego. Partner również powinien zostać dobrany" +
+                "mniej więcej wagowo i wzrostowo" +
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+            
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 38,
+                Name = "ĆWICZENIA Z HANTLAMI",
+                Description = "Dynamiczne ciosy trzymając hantle. Ciosy proste, sierpowe oraz z dołu." +
+                "\n WAŻNE: Bardzo ważne, aby ciężar hantli (do 5kg.) został dobrany do wieku oraz predyspozycji trenującego."+
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            }); 
+            
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 39,
+                Name = "ĆWICZENIA Z CIĘŻARKAMI",
+                Description = "Dynamiczne ciosy trzymając hantle. Ciosy proste, sierpowe." +
+                "\n WAŻNE: Bardzo ważne, aby ciężarki (do 2kg.) zostały dobrane do wieku oraz predyspozycji trenującego."+
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });  
+            
+
+
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 40,
+                Name = "BIEG BOKSERSKI Z CIĘŻARKAMI",
+                Description = "Dynamiczny bieg bokserski - ciosy z wyrzutem ciężarków." +
+                "\n WAŻNE: Bardzo ważne, aby ciężarki (do 2kg.) zostały dobrane do wieku oraz predyspozycji trenującego." +
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+            
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 41,
+                Name = "WALKA Z CIENIEM Z CIĘŻARKAMI",
+                Description = "Dynamiczna walka z cieniem - ciosy z wyrzutem ciężarków." +
+                "\n WAŻNE: Bardzo ważne, aby ciężarki (do 1,5kg.) zostały dobrane do wieku oraz predyspozycji trenującego." +
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 42,
+                Name = "BRZUSZKI",
+                Description = "Dowolne ćwiczenie na mięśnie brzucha (preferowane skłony do lekko zgiętych nóg)." +
+                "Dodatkowo można dołożyć obciążenie w formie krążka do sztangi." +
+                "\n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego." +
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 43,
+                Name = "POMPKI",
+                Description = "Dynamiczne pompki przez całe 3 minuty. Zamiast pompek ćwiczenie można zastąpić np dynamicznym wyrzutem krążka lub sztangi (Do 15kg) stojąc na lekko" +
+                "ugiętych nogach, ",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 44,
+                Name = "PODCIĄGANIE NA DRĄŻKU (NACHWYTEM)",
+                Description = "Dynamiczne podciąganie nachwytem na drążku. Pamiętajmy, że trzy minuty podciągania to mimo wszystko dość długo. W takim wypadku jeżeli zawodnik" +
+                "nie może podciągać się na drążku przez trzy minuty bez przerwy powinien wykonywać ćwiczenie aż do całkowitego zmęczenia mięśniowego, następnie po przerwie około 30 sekund" +
+                "powinien natychmiast powrócić do ćwiczenia aby następnie znów wykonać je aż do kompletnego zmęczenia mięśni.",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+            
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 45,
+                Name = "MACHANIE CIĘŻAREM PO OKRĘGU W JEDNĄ A POTEM W DRUGĄ STRONĘ (CIĘŻAR DO 15KG.)",
+                Description = "Krążenia krążka o wadzę do 15kg. Krążenie ciała powinno zostać wykonane w pozycji stabilnej na lekko ugiętych nogach" +
+                "tak aby nieodrywać stóp od podłoża. Celem takiego ćwiczenia jest wyizolowanie  " +
+                "" +
+                "\n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego." +
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+
+            modelBuilder.Entity<Strength>().HasData(new Strength
+            {
+                Id = 46,
+                Name = "MACHANIE CIĘŻAREM PO OKRĘGU W JEDNĄ A POTEM W DRUGĄ STRONĘ (CIĘŻAR DO 15KG.)",
+                Description = "Krążenia krążka o wadzę do 15kg. Krążenie ciała powinno zostać wykonane w pozycji stabilnej na lekko ugiętych nogach" +
+                "tak aby nieodrywać stóp od podłoża. Celem takiego ćwiczenia jest wyizolowanie  " +
+                "" +
+                "\n WAŻNE: Bardzo ważne, aby ciężar został dobrany do wieku oraz predyspozycji trenującego." +
+                " (Obciążenie powinien dobierać wykwalifikowany trener)",
+                TimeLength = 3,
+                ExerciseTypeId = 11
+
+            });
+            
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 47,
+                Name = "LEWY PROSTY",
+                Description = "Podstawa zarówno Polskiego jak i światowego dobrego boksu. Lewy cios prosty powinien zostać wykonany z zachowaniem " +
+                "zasad wykonania prawidłowego ciosu a więc zachować prawidłowy skręt bioder w celu przedłużenia ciosu." +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 48,
+                Name = "PRAWY PROSTY",
+                Description = "Bezpośredni prawy cios prosty" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 49,
+                Name = "LEWY + PRAWY PROSTY",
+                Description = "Ciosy proste w kombinacji dwóch ciosów prostych." +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub/i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            }); 
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 50,
+                Name = "LEWY - PRAWY - LEWY PROSTY",
+                Description = "Ciosy proste w kombinacji trzech ciosów prostych." +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });  
+
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 51,
+                Name = "LEWY - PRAWY - LEWY SIERP",
+                Description = "Kombinacja ciosów prostych i lewego ciosu sierpowego" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 52,
+                Name = "LEWY - PRAWY - UNIK - PRAWY SIERP",
+                Description = "Kombinacja ciosów prostych i prawego ciosu sierpowego" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 53,
+                Name = "LEWY - PRAWY - UNIK - LEWY Z DOŁU",
+                Description = "Kombinacja ciosów prostych i lewego ciosu z dołu" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 54,
+                Name = "LEWY - PRAWY - UNIK - PRAWY Z DOŁU",
+                Description = "Kombinacja ciosów prostych i prawego ciosu z dołu" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });        
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 55,
+                Name = "LEWY - PRAWY Z DOŁU - LEWY SIERP",
+                Description = "Kombinacja ciosów z dołu i lewego ciosu sierpowego" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+            
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 56,
+                Name = "LEWY - PRAWY Z DOŁU - UNIK - PRAWY SIERP",
+                Description = "Kombinacja ciosów z dołu i prawego ciosu sierpowego" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+
+            modelBuilder.Entity<Technique>().HasData(new Technique
+            {
+                Id = 57,
+                Name = "LEWY - PRAWY Z DOŁU - UNIK - PRAWY SIERP - LEWY SIERP",
+                Description = "Kombinacja ciosów z dołu i sierpowych" +
+                "\nWAŻNE: Niesłuchanie istotną kwestią jest oczywiście dowolny unik po pojedynczym ciosie lub / i obowiążkowo po zakończeniu kombinacji",
+                TimeLength = 3,
+                ExerciseTypeId = 12
+
+            });
+
+
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 58,
+                Name = "Seria na worek 30 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie trzydziestu sekund następuje zmiana zawodnika. " +
+                "Takich rund zawodnik powinien wykonać 12. Przerwa to również trzydzieści sekund",
+                TimeLength = 30,
+                Rounds = 12,
+                ExerciseTypeId = 13
+
+            });
+
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 59,
+                Name = "Seria na worek 20 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie dwudziesty sekund następuje zmiana zawodnika. " +
+                "Takich rund zawodnik powinien wykonać szesnaście. Przerwa powinna wyności czterdzieści sekund.",
+                TimeLength = 20,
+                Rounds = 16,
+                ExerciseTypeId = 13
+
+            });
+
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 60,
+                Name = "Seria na worek 15 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie piętnastu sekund następuje zmiana zawodnika. " +
+                "Takich rund zawodnik powinien wykonać osiemnaście. Przerwa powinna wyności czterdzieści pięć sekund.",
+                TimeLength = 15,
+                Rounds = 18,
+                ExerciseTypeId = 13
+
+            });
+            
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 61,
+                Name = "Seria na worek 10 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie dziesięciu sekund następuje zmiana zawodnika. " +
+                "Takich rund zawodnik powinien wykonać osiemnaście. Przerwa powinna wyności pięćdziesiąt sekund.",
+                TimeLength = 10,
+                Rounds = 24,
+                ExerciseTypeId = 13
+
+            });
+
+            modelBuilder.Entity<FinalExercise>().HasData(new FinalExercise
+            {
+                Id = 62,
+                Name = "Skakanka",
+                Description = "Jedno z ćwiczeń końcowych jest oczywiście skok na skakance. Skoki wykonujemy przez całę 3 minuty.",
+                TimeLength = 3,
+                ExerciseTypeId = 14
+
+            });
+            
+            modelBuilder.Entity<FinalExercise>().HasData(new FinalExercise
+            {
+                Id = 63,
+                Name = "Walka z cieniem",
+                Description = "Walka z cienie. Długie dokładnie ruchy ",
+                TimeLength = 3,
+                ExerciseTypeId = 14
+
+            });
+
+            modelBuilder.Entity<FinalExercise>().HasData(new FinalExercise
+            {
+                Id = 64,
+                Name = "Ćwiczenia na brzuch",
+                Description = "Brzuszki lub inne ćwiczenia na mięśnie brzucha. Łącznie 120 powtórzeń lub więcej",
+                TimeLength = 120,
+                ExerciseTypeId = 14
 
             });
 
@@ -755,6 +1278,97 @@ namespace Api.Data
 
             });
 
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 8,
+                Name = "Trening Siłowy - Mięśni Naramiennych",
+                Description = "Mięśnie naramienne są jedną z najbardziej widocznych grup mięśniowych, a dobrze rozwinięte tzw. ”bary”  są świadectwem zdrowia i siły. Jak widać na powyższych szkicach mięśnie naramienne zbudowane są z trzech aktonów (par głów: przednich, bocznych i tylnych). " +
+                "Każda para głów,to jakby osobne mięśnie i wymaga odrębnych ćwiczeń ukierunkowanych na rozwój konkretnej pary głów (aktonów)." +
+                " We właściwym treningu (mającym na celu wszechstronny rozwój mięśni naramiennych) uwzględnić należy ćwiczenia na wszystkie aktony." +
+                " Liczba serii ,ilość powtórzeń i ciężar,jaki stosujemy w treningu poszczególnych aktonów powinny być dostosowane do konkretnej pary głów. " +
+                "Ponieważ mięśnie barków biorą aktytwny udział we wszystkich ćwiczeniach, w których pracują ramiona,to na przestrzeni tygodnia poszczególne aktony są w różnym stopniu zmęczone (w trakcie różnych ćwiczeń,różne głowy są zaangażowane) " +
+                "i należy układając trening uwzględnić pracę, jaką wykonały na poprzedzających treningach (na inne grupy mięśniowe). " +
+                "W związku z tym wykonywanie takiej samej ilości serii na wszystkie aktony mięśni naramiennych nie jest wskazane-doprowadzić może do przetrenowania jednych, a niedotrenowania innych aktonów. " +
+                "Generalną zasadą jest, że stosujemy minimum jedno ćwiczenie na każdą parę głów."
+
+            });
+
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 9,
+                Name = "Trening Siłowy - Mięśni Ramion (triceps oraz przedramiona) ",
+                Description = "Trzeba sobie uświadomić, że triceps stanowi 2/3 masy mięśniowej całego ramienia. " +
+                "Chcąc mieć symetrycznie rozwinięte mięśnie ramion, należy temu mięśniowi poświęcić nieco więcej uwagi." +
+                " Jego budowa (jest to mięsień trójgłowy- składający się z trzech głów)ściśle warunkuje charakter treningu-jego wielokierunkowość, która powinna pozwolić nam na wszechstronny rozwój wszystkich trzech głów. Które ćwiczenia i pozycje wpływają na rozwój poszczególnych głów, wyjaśnia poniżej przedstawiony opis."
+
+            });
+
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 10,
+                Name = "Trening Siłowy - Mięśni Brzucha ",
+                Description = "a wstępie należy zaznaczyć, że żadne nawet najbardziej wyszukane i najintensywniejsze ćwiczenia mięśni brzucha nie są w stanie zastąpić odpowiednio zbilansowanej diety. Jeśli nie będziemy jej przestrzegać, to owszem możemy wytrenować sobie mocne i silnie rozbudowane mięśnie brzucha, " +
+                "ale pozostaną one ukryte pod warstwą tkanki tłuszczowej i będą niewidoczne, a co za tym idzie nie będą mogły spełniać jednej ze swoich ról-mianowicie roli estetycznej. " +
+                "Panuje błędne przekonanie, że trening mięśni brzucha jest sam dla siebie rozgrzewką.(może dlatego, że wiele osób traktuje ćwiczenia na brzuch, jako rozgrzewkę przed treningami innych mięśni). Nic bardziej mylnego. " +
+                "Trening mięśni brzucha powinien być poprzedzony rozgrzewką-nie gorszą niż przed treningiem innych partii umięśnienia." +
+                " Prawidłowa rozgrzewka przed treningiem mięśni brzucha zawiera, poza ćwiczeniami aerobowymi( zwiększającymi temperaturę mięśni)-jak przy innych grupach mięśniowych, także odpowiednie ćwiczenia angażujące dolny odcinek grzbietu- np. skłony, skręty tułowia, krążenia bioder jak również mięśnie prostowniki bioder(bardzo aktywne w treningu mięśni brzucha)." +
+                " Kolejnym błędem popełnianym w treningu mięśni brzucha są zbyt częste treningi, a co za tym idzie, zbyt krótki odpoczynek. "
+
+            });
+
+
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 11,
+                Name = "Trening Wytrzymałościowy - Wytrzymałość szybkościowa",
+                Description = "Wytrzymałość to zdolność organizmu do wykonywania wysiłku fizycznego przez długi czas, bez uszczerbku dla jego funkcji życiowych." +
+                " To umiejętność zminimalizowania zmęczenia nabywana w czasie treningu. " +
+                "Wytrzymałość szybkościowa to umiejętność wykonywania szybkich ruchów na niezmiennym poziomie, np. w trakcie walki. " +
+                "Wytrzymałość jest fundamentem działań boksera pozwalającym mu na wykorzystanie wszystkich środków technicznych przez cały czas trwania walki." +
+                " Jest ona tym ważniejsza, im dłużej trwa wysiłek fizyczny." +
+                "\n Dobrą metodą trenowania wytrzymałości szybkościowej jest trening obwodowy." +
+                " Liczba stacji powinna zawierać się w liczbie od 8 do 12"
+
+            });
+
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 12,
+                Name = "Technika sportowa – sposób wykonania zadania ruchowego",
+                Description = "Przygotowanie techniczne – proces opanowywania takiego zasobu zadań ruchowych (techniki działań), " +
+                "który w połączeniu z cechami budowy ciała, sprawności itp. pozwala uzyskiwać racjonalne i efektywnie najlepsze wyniki sportowe w sposób zgodny z przepisami obowiązującymi " +
+                "w danej dyscyplinie. " +
+                "\nDobra technika powinna charakteryzować się:" +
+                "\n- przyjęciem jednoznacznego celu ruchu;" +
+                "\n- dobrze zaznaczonym przedziałem czasowo - przestrzennym(faza przygotowawcza, główna i końcowa ruchu) " +
+                "\n- poprawnie wyrażonym przedziałem dynamiczno - czasowym(rytm, płynna kolejność napięć i rozluźnień)" +
+                "\n- wysoką elastycznością(umiejętne pokonywanie i wykorzystanie oporów środowiska)" +
+                "\n- wczesnym przewidywaniem ruchu(właściwe ustawienie koncepcji ruchu)" +
+                "\n- przewidywaniem ruchów obcych(przeciwnik, wiatr, śliska nawierzchnia itp.)" +
+                "\n WAŻNE: Trening techniki sportowej powinien zostać wykonany w parze z partnerem, który jest dobrany wzrostowo oraz wagowo" +
+                "lub na tarczy u trenera. Podana technika w aplikacji jest techniką przykładową i oczywiście może ona być stosowana wymiennie w zależności od koncepcji trenerskiej" +
+                "koncpecji treningu nadaną przez trenera."
+            });
+            
+            
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 13,
+                Name = "Trening Szybkościowo-wytrzymałościowy",
+                Description = "Przygotowanie szybkościowe jest stosowane w okresie bezpośrednio przed startowym. W tym wypadku należy trenować szybkość ostatni " +
+                "tydzień przed startem. Szybkie wydolnościowe serie na worku od kilkudziesięciu do kilku sekund na 'rundę'. "
+            });
+            
+            modelBuilder.Entity<ExerciseType>().HasData(new ExerciseType
+            {
+                Id = 14,
+                Name = "Ćwiczenia końcowe",
+                Description = "Ćwiczenia końcowe są już elementem uspokojenia pracy krążenia. Są one nadal wykonywane dokładnie natomiast już z innym natężeniem. "
+                
+            });
+
+
+
         }
 
         public DbSet<WarmupOnGo> WarmupOnGo { get; set; }
@@ -764,7 +1378,10 @@ namespace Api.Data
         public DbSet<Power> Power { get; set; }
         public DbSet<Technique> Technique { get; set; }
         public DbSet<Strength> Strength { get; set; }
-        public DbSet<Speed> Speed { get; set; }
+        public DbSet<Speed> Speed { get; set; }    
+        public DbSet<FinalExercise> Finals { get; set; }
+
+
 
 
     }
