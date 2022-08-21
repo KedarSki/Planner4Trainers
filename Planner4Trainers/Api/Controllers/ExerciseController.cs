@@ -128,7 +128,141 @@ namespace Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
             }
         }
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<PowerDto>>> GetPowers()
+        {
+            try
+            {
+                var power = await this.exerciseRepository.GetPowers();
+                var exerciseTypes = await this.exerciseRepository.GetExerciseTypes();
 
+                if (exerciseTypes == null || power == null)
+                {
+                    return NotFound();
+                }
+
+                else
+                {
+                    var exerciseTypesDto = exerciseTypes.ConvertToDto(power);
+                    return Ok(exerciseTypesDto);
+                }
+
+            }
+
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+            }
+        }
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<StrengthDto>>> GetStrengths()
+        {
+            try
+            {
+                var strength = await this.exerciseRepository.GetStrengths();
+                var exerciseTypes = await this.exerciseRepository.GetExerciseTypes();
+
+                if (exerciseTypes == null || strength == null)
+                {
+                    return NotFound();
+                }
+
+                else
+                {
+                    var exerciseTypesDto = exerciseTypes.ConvertToDto(strength);
+                    return Ok(exerciseTypesDto);
+                }
+
+            }
+
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+            }
+        }
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<TechniqueDto>>> GetTechniques()
+        {
+            try
+            {
+                var technique = await this.exerciseRepository.GetTechniques();
+                var exerciseTypes = await this.exerciseRepository.GetExerciseTypes();
+
+                if (exerciseTypes == null || technique == null)
+                {
+                    return NotFound();
+                }
+
+                else
+                {
+                    var exerciseTypesDto = exerciseTypes.ConvertToDto(technique);
+                    return Ok(exerciseTypesDto);
+                }
+
+            }
+
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+            }
+        }
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<SpeedDto>>> GetSpeeds()
+        {
+            try
+            {
+                var speed = await this.exerciseRepository.GetSpeeds();
+                var exerciseTypes = await this.exerciseRepository.GetExerciseTypes();
+
+                if (exerciseTypes == null || speed == null)
+                {
+                    return NotFound();
+                }
+
+                else
+                {
+                    var exerciseTypesDto = exerciseTypes.ConvertToDto(speed);
+                    return Ok(exerciseTypesDto);
+                }
+
+            }
+
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+            }
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<FinalExerciseDto>>> GetFinalExercises()
+        {
+            try
+            {
+                var final = await this.exerciseRepository.GetFinalExercises();
+                var exerciseTypes = await this.exerciseRepository.GetExerciseTypes();
+
+                if (exerciseTypes == null || final == null)
+                {
+                    return NotFound();
+                }
+
+                else
+                {
+                    var exerciseTypesDto = exerciseTypes.ConvertToDto(final);
+                    return Ok(exerciseTypesDto);
+                }
+
+            }
+
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+            }
+        }
 
     }
 }

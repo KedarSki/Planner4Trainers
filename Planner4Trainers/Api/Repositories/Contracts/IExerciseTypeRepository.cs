@@ -14,9 +14,10 @@ namespace Api.Repositories.Contracts
         Task<IEnumerable<Speed>> GetSpeeds();
         Task<IEnumerable<Strength>> GetStrengths();
         Task<IEnumerable<Technique>> GetTechniques();
-
         Task<IEnumerable<FinalExercise>> GetFinalExercises();
         Task<IEnumerable<ExerciseType>> GetExerciseTypes();
+
+
         Task<WarmupOnGo> GetWarmupOnGo(int id);
         Task<WarmupOnWalk> GetWarmupOnWalk(int id);
         Task<WarmupOnPlace> GetWarmupOnPlace (int id);

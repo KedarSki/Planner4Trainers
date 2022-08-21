@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Common.Dtos
 {
-    public class PowerDto
+    public class TechniqueDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Repeats { get; set; }
-        public int Series { get; set; }
+        public string Exercise { get; set; }
+        public int TimeLength { get; set; }
         public string Description { get; set; }
         public int ExerciseTypeId { get; set; }
         public string ExerciseTypeName { get; set; }
