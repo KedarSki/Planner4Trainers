@@ -26,7 +26,7 @@ namespace Api.Data
                 Id = 1,
                 Name = "Bieg - Trucht",
                 Description = "Luźny bieg z jednoczesnymi wymachami ramion",
-                TimeLength = 10,
+                TimeLength = 90,
                 ExerciseTypeId = 1
 
             });
@@ -36,7 +36,7 @@ namespace Api.Data
                 Id = 2,
                 Name = "Krążenia ramion w przód oraz w tył - Naprzemiennie",
                 Description = "Ćwiczenie (Wykonujemy krążenia naprzemiennie oburącz) najpierw 15 sekund w przód a następnie 15 sekund w tył.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
 
             });
@@ -46,7 +46,7 @@ namespace Api.Data
                 Id = 3,
                 Name = "Skip-A",
                 Description = "Naprzemienne kolan w biegu do momentu osiągnięcia kątu prostego między udem a tłowiem.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -55,7 +55,7 @@ namespace Api.Data
                 Id = 4,
                 Name = "Skip-C",
                 Description = "Naprzemienne uderzanie piętami o pośladki.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -64,7 +64,7 @@ namespace Api.Data
                 Id = 5,
                 Name = "Krążenie ramion w przód oraz w tył - Jednocześnie",
                 Description = "Ćwiczenie wykonujemy w biegu lub podczas przeskoków nogami.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -73,7 +73,7 @@ namespace Api.Data
                 Id = 6,
                 Name = "Krok odstawno dostawny twarzą do środka sali.",
                 Description = "Ćwiczenie wykonujemy odstawiając i dostawiając nogi twarzą do środka sali.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -82,7 +82,7 @@ namespace Api.Data
                 Id = 7,
                 Name = "Krok odstawno dostawny twarzą na zewnątrz",
                 Description = "Ćwiczenie wykonujemy odstawiając i dostawiając nogi twarząna zewnątrz sali.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -91,7 +91,7 @@ namespace Api.Data
                 Id = 8,
                 Name = "Krok odstawno dostawny twarzą na zewnątrz",
                 Description = "Ćwiczenie wykonujemy odstawiając i dostawiając nogi twarząna zewnątrz sali.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -101,7 +101,7 @@ namespace Api.Data
                 Id = 9,
                 Name = "Przeplatanka twarzą do środka sali",
                 Description = "Ćwiczenie wykonujemy odstawiając i dostawiając nogi twarząna zewnątrz sali.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -110,7 +110,7 @@ namespace Api.Data
                 Id = 10,
                 Name = "Przeplatanka twarzą do środka sali",
                 Description = "Ćwiczenie wykonujemy odstawiając i dostawiając nogi twarząna zewnątrz sali.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 1
             });
 
@@ -122,7 +122,7 @@ namespace Api.Data
                 Id = 1,
                 Name = "Marsz",
                 Description = "Zwykły marsz w celu delikatnego uspokojena oddechu.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 2
             });
 
@@ -131,7 +131,7 @@ namespace Api.Data
                 Id = 2,
                 Name = "Wymachy ramion góra-dół",
                 Description = "Wymachy ramion w przeciwnym kierunku do nóg - Ręka musi być wyprostowana w stawie łokciowym.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 2
             });
 
@@ -140,7 +140,7 @@ namespace Api.Data
                 Id = 3,
                 Name = "Wymachy ramion na bogi z wykrokiem",
                 Description = "Wymachy ramion na przemianstronnie w przeciwnym kierunku do nóg. Wymach ten wymaga jednej ręki wyprostowanej na bok a drugiej zgiętej w łokciu.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 2
             });
 
@@ -150,7 +150,7 @@ namespace Api.Data
                 Name = "Ciosy proste w marszu",
                 Description = "Cios prosty wykonany na pełnym wyproście w stawie łokciowym. Z lekko zgiętym tłowiem (pozycja bokserska) wraz ze skrętem barku." +
                 "Cios w przeciwnym kierunku do kroku.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 2
             });
 
@@ -160,7 +160,7 @@ namespace Api.Data
                 Name = "Ciosy sierpowe w marszu",
                 Description = "Cios sierpowy wykonany ze skrętem oraz lekko zgiętym tłowiem (pozycja bokserska) wraz ze skrętem barku." +
                 "Cios w przeciwnym kierunku do kroku.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 2
             });
 
@@ -170,7 +170,7 @@ namespace Api.Data
                 Name = "Ciosy podbródkowe w marszu",
                 Description = "Cios podbródkowy wykonany z lekkim przeniesieniem ciężaru ciała oraz lekko zgiętym tłowiem (pozycja bokserska)" +
                 "Cios w przeciwnym kierunku do kroku.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 2
             });
 
@@ -179,7 +179,7 @@ namespace Api.Data
                 Id = 7,
                 Name = "Wymachy wyprostowanych ramion do wyprostowanej nogi",
                 Description = "Wymach wyprostowanej ręki w łokciu do przeciwnej wyprostowanej w kolanie nogi.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 2
             });
 
@@ -190,7 +190,7 @@ namespace Api.Data
                 Id = 1,
                 Name = "Skłony tłowia do ziemi z wyprostem",
                 Description = "Skłony tłowia do ziemi na wyprostowanych w kolanach nogach w delikatnym rozkroku",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 
@@ -200,7 +200,7 @@ namespace Api.Data
                 Name = "Skręty tłowia do kostek",
                 Description = "Skłony na wyprostowanych nogach w delikatnym rozkroku, ręce w pełnym wyproście na bok i dotykamy lewą rękę do prawej nogi" +
                 "i odwrotnie.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 
@@ -209,7 +209,7 @@ namespace Api.Data
                 Id = 3,
                 Name = "Skręty tłowia w przód i w tył",
                 Description = "Skręty tłowia podczas wykonywania tłów należy pochylić do skłonu w przód a następnie odchylając w tył.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 
@@ -219,7 +219,7 @@ namespace Api.Data
                 Name = "Cios sierpowy ze skłonem do kostki",
                 Description = "W delikatnym rozkroku wykonać dynamiczny cios sierpowy i po każdym ciosie wykonać skłon do kostki przeciwnej do ręki." +
                 "Ilość powtórzeń 5 na stronę lub 30 sekund.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 
@@ -229,7 +229,7 @@ namespace Api.Data
                 Id = 5,
                 Name = "Przysiady",
                 Description = "Przysiady na złączonych nogach. Ilość powtórzeń ciągłych przez 30 sekund lub 15 powtórzeń.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 
@@ -239,7 +239,7 @@ namespace Api.Data
                 Name = "Pompki",
                 Description = "Podpór przodem przy którym podnosimy i opuszczamy ciężąr ciałą. Ilość powtórzeń wykonujemy przez 30 sekund " +
                 "lub 15 powtórzeń.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 
@@ -248,7 +248,7 @@ namespace Api.Data
                 Id = 7,
                 Name = "Przysiady",
                 Description = "Przysiady na złączonych nogach.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 
@@ -257,7 +257,7 @@ namespace Api.Data
                 Id = 8,
                 Name = "Wyrzuty nóg do tyłu",
                 Description = "Z pozycji stojącej dynamiczne zejście do przysiadu. Następnie wyrzut nóg do tyłu przechodząc szybko do podporu przodem.",
-                TimeLength = 0.5M,
+                TimeLength = 30,
                 ExerciseTypeId = 3
             });
 

@@ -24,9 +24,8 @@ else
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Id</th>
                         <th>Ćwiczenie</th>
-                        <th>Opis treningu</th>
+                        <th>Opis ćwiczenia</th>
                         <th>Długość trwania</th>
                         
                     </tr>
@@ -34,11 +33,11 @@ else
                 <tbody>
                     @foreach (var exerciseOnGo in warmupsOnGo)
                     {
+                        
                         <tr>
-                            <th>@exerciseOnGo.Id</th>
                             <th>@exerciseOnGo.Name</th>
                             <th>@exerciseOnGo.Description</th>
-                            <th>@exerciseOnGo.TimeLength</th>
+                            <th>@exerciseOnGo.TimeLength sekund</th>
                       
                         </tr>
                     }
@@ -53,9 +52,8 @@ else
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Id</th>
                         <th>Ćwiczenie</th>
-                        <th>Opis treningu</th>
+                        <th>Opis ćwiczenia</th>
                         <th>Długość trwania</th>
                         
                     </tr>
@@ -64,10 +62,9 @@ else
                     @foreach (var exerciseOnWalk in warmupsOnWalk)
                     {
                         <tr>
-                            <th>@exerciseOnWalk.Id</th>
                             <th>@exerciseOnWalk.Name</th>
                             <th>@exerciseOnWalk.Description</th>
-                            <th>@exerciseOnWalk.TimeLength</th>
+                            <th>@exerciseOnWalk.TimeLength sekund</th>
                       
                         </tr>
                     }
@@ -82,9 +79,8 @@ else
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Id</th>
                         <th>Ćwiczenie</th>
-                        <th>Opis treningu</th>
+                        <th>Opis ćwiczenia</th>
                         <th>Długość trwania</th>
                         
                     </tr>
@@ -93,10 +89,9 @@ else
                     @foreach (var exerciseOnPlace in warmupsOnPlace)
                     {
                         <tr>
-                            <th>@exerciseOnPlace.Id</th>
                             <th>@exerciseOnPlace.Name</th>
                             <th>@exerciseOnPlace.Description</th>
-                            <th>@exerciseOnPlace.TimeLength</th>
+                            <th>@exerciseOnPlace.TimeLength sekund</th>
                       
                         </tr>
                     }

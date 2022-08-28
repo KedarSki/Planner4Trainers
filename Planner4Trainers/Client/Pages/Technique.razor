@@ -1,0 +1,48 @@
+﻿@page "/techniques"
+@inherits ExerciseTypesBase
+
+
+@if (ExerciseTypes == null)
+{
+    <h3 style="color:white">Trwa Ładowanie strony</h3>
+}
+else
+{
+
+    var technique = new List<TechniqueDto>();
+
+
+    technique = Techniques.ToList();
+
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Trening techniki w parach</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ćwiczenie</th>
+                        <th>Opis ćwiczenia</th>
+                        <th>Długość trwania</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var techniqueExercise in technique)
+                    {
+                        <tr>
+                            <th>@techniqueExercise.Name</th>
+                            <th>@techniqueExercise.Description</th>
+                            <th>@techniqueExercise.TimeLength</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
+@code {
+
+}

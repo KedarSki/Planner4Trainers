@@ -69,5 +69,74 @@ namespace Client.Services
                 throw;
             }
         }
+        public async Task<IEnumerable<PowerDto>> GetPowers()
+        {
+            try
+            {
+                var powers = await this.httpClient.GetFromJsonAsync<IEnumerable<PowerDto>>("api/Exercise/GetPowers");
+                return powers;
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
+        public async Task<IEnumerable<StrengthDto>> GetStrengths()
+        {
+            try
+            {
+                var strengths = await this.httpClient.GetFromJsonAsync<IEnumerable<StrengthDto>>("api/Exercise/GetStrengths");
+                return strengths;
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
+        public async Task<IEnumerable<TechniqueDto>> GetTechniques()
+        {
+            try
+            {
+                var techniques = await this.httpClient.GetFromJsonAsync<IEnumerable<TechniqueDto>>("api/Exercise/GetTechniques");
+                return techniques;
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
+        public async Task<IEnumerable<SpeedDto>> GetSpeeds()
+        {
+            try
+            {
+                var speeds = await this.httpClient.GetFromJsonAsync<IEnumerable<SpeedDto>>("api/Exercise/GetSpeeds");
+                return speeds;
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
+        public async Task<IEnumerable<FinalExerciseDto>> GetFinalExercises()
+        {
+            try
+            {
+                var speeds = await this.httpClient.GetFromJsonAsync<IEnumerable<FinalExerciseDto>>("api/Exercise/GetSpeeds");
+                return speeds;
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

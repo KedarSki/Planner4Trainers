@@ -1,0 +1,49 @@
+﻿@page "/finals"
+@inherits ExerciseTypesBase
+
+
+@if (ExerciseTypes == null)
+{
+    <h3 style="color:white">Trwa Ładowanie strony</h3>
+}
+else
+{
+
+    var final = new List<FinalExerciseDto>();
+
+
+    final = FinalExercises.ToList();
+
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Trening siłowy</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ćwiczenie</th>
+                        <th>Opis ćwiczenia</th>
+                        <th>Długość trwania</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var finalExercises in final)
+                    {
+                        <tr>
+                            <th>@finalExercises.Name</th>
+                            <th>@finalExercises.Description</th>
+                            <th>@finalExercises.TimeLength</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
+@code {
+
+}

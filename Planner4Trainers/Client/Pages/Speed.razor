@@ -1,0 +1,52 @@
+﻿@page "/speeds"
+@inherits ExerciseTypesBase
+
+
+@if (ExerciseTypes == null)
+{
+    <h3 style="color:white">Trwa Ładowanie strony</h3>
+}
+else
+{
+
+    var speed = new List<SpeedDto>();
+
+
+    speed = Speeds.ToList();
+
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Trening szybkościowy</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ćwiczenie</th>
+                        <th>Opis treningu</th>
+                        <th>Ilość rund</th>
+                        <th>Długość trwania</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var speedExercise in speed)
+                    {
+                        <tr>
+                            <th>@speedExercise.Name</th>
+                            <th>@speedExercise.Description</th>
+                            <th>@speedExercise.Rounds</th>
+                            <th>@speedExercise.TimeLength</th>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
+@code {
+
+}

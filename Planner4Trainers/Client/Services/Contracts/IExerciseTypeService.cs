@@ -8,6 +8,13 @@ namespace Client.Services.Contracts
         Task<IEnumerable<WarmupOnGoDto>> GetWarmupsOnGo();
         Task<IEnumerable<WarmupOnWalkDto>> GetWarmupsOnWalk();
         Task<IEnumerable<WarmupOnPlaceDto>> GetWarmupsOnPlace();
+        Task<IEnumerable<PowerDto>> GetPowers();
+        Task<IEnumerable<StrengthDto>> GetStrengths();
+        Task<IEnumerable<SpeedDto>> GetSpeeds();
+        Task<IEnumerable<TechniqueDto>> GetTechniques();
+        Task<IEnumerable<FinalExerciseDto>> GetFinalExercises();
+
+
 
     }
 }

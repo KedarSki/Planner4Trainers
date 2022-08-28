@@ -1,0 +1,50 @@
+﻿@page "/strengths"
+@inherits ExerciseTypesBase
+
+
+@if (ExerciseTypes == null)
+{
+    <h3 style="color:white">Trwa Ładowanie strony</h3>
+}
+else
+{
+
+    var strength = new List<StrengthDto>();
+
+
+    strength = Strengths.ToList();
+
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Trening wytrzymałościowo-siłowy</h2>
+            <table class="table table-striped table-dark">
+
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ćwiczenie</th>
+                        <th>Opis ćwiczenia</th>
+                        <th>Czas trwania ćwiczenia na stacji</th>                      
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var strengthExercise in strength)
+                    {
+                        <tr>
+                            <th>@strengthExercise.Name</th>
+                            <th>@strengthExercise.Description</th>
+                            <th>@strengthExercise.TimeLength</th>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
+@code {
+
+}
