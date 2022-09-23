@@ -1,0 +1,23 @@
+﻿@page "/planner"
+@using BlazorDateRangePicker
+colorrits ExerciseTypesBase
+
+<h2>Zaplanuj trening</h2>
+
+<div class="container">
+    <div style="color:white" class="form-group">
+        <label>Wybierz date rozpoczęcia przygotowań</label>
+        <DateRangePicker @bind-StartDate="StartDate" @bind-EndDate="EndDate"></DateRangePicker>
+
+    </div>
+</div>
+
+@code {
+
+
+    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddMonths(-1);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
+
+
+}
+

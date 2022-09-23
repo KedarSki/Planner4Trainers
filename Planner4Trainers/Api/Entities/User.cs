@@ -1,4 +1,4 @@
-﻿namespace Api.Entities.Trainings
+﻿namespace Api.Entities
 {
     public class User
     {

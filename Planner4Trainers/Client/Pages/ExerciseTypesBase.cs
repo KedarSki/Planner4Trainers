@@ -40,5 +40,7 @@ namespace Client.Pages
 
             FinalExercises = await ExerciseTypeService.GetFinalExercises();
         }
+
+
     }
 }
