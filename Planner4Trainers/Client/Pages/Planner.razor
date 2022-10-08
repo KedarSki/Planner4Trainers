@@ -1,23 +1,146 @@
 ﻿@page "/planner"
 @using BlazorDateRangePicker
-colorrits ExerciseTypesBase
+@inherits ExerciseTypesBase
 
-<h2>Zaplanuj trening</h2>
+<h2 style="color:white">Zaplanuj trening</h2>
 
 <div class="container">
     <div style="color:white" class="form-group">
         <label>Wybierz date rozpoczęcia przygotowań</label>
-        <DateRangePicker @bind-StartDate="StartDate" @bind-EndDate="EndDate"></DateRangePicker>
-
+        <DateRangePicker @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="() => SetTime()"></DateRangePicker>
     </div>
 </div>
 
+@if (ExerciseTypes == null)
+{
+    <h3 style="color:white">Trwa Ładowanie strony</h3>
+}
+
+else
+{
+
+            <RadzenDataGrid Data="@WarmupsOnGo"  TItem="WarmupOnGoDto" 
+        AllowFiltering="true" AllowColumnResize="true" AllowSorting="true">
+        <Columns>
+            <RadzenDataGridColumn TItem="WarmupOnGoDto" Property="Name" Title="Ćwiczenie" />
+            <RadzenDataGridColumn TItem="WarmupOnGoDto" Property="Description" Title="Opis ćwiczenia" />
+            <RadzenDataGridColumn TItem="WarmupOnGoDto" Property="TimeLength" Title="Długość trwania" />
+        </Columns>
+
+    </RadzenDataGrid>
+
+    var warmupsOnGo = new List<WarmupOnGoDto>();
+    var warmupsOnWalk = new List<WarmupOnWalkDto>();
+    var warmupsOnPlace = new List<WarmupOnPlaceDto>();
+
+
+    warmupsOnGo = WarmupsOnGo.ToList();
+    warmupsOnWalk = WarmupsOnWalk.ToList();
+    warmupsOnPlace = WarmupsOnPlace.ToList();
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Rozgrzewka w biegu</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ćwiczenie</th>
+                        <th>Opis ćwiczenia</th>
+                        <th>Długość trwania</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    @foreach (var exerciseOnGo in warmupsOnGo)
+                    {
+
+                        <tr>
+                            <th>@exerciseOnGo.Name</th>
+                            <th>@exerciseOnGo.Description</th>
+                            <th>@exerciseOnGo.TimeLength sekund</th>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Rozgrzewka w marszu</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ćwiczenie</th>
+                        <th>Opis ćwiczenia</th>
+                        <th>Długość trwania</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exerciseOnWalk in warmupsOnWalk)
+                    {
+                        <tr>
+                            <th>@exerciseOnWalk.Name</th>
+                            <th>@exerciseOnWalk.Description</th>
+                            <th>@exerciseOnWalk.TimeLength sekund</th>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="table-responsive">
+            <h2 style="color:white">Rozgrzewka w miejscu</h2>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ćwiczenie</th>
+                        <th>Opis ćwiczenia</th>
+                        <th>Długość trwania</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exerciseOnPlace in warmupsOnPlace)
+                    {
+                        <tr>
+                            <th>@exerciseOnPlace.Name</th>
+                            <th>@exerciseOnPlace.Description</th>
+                            <th>@exerciseOnPlace.TimeLength sekund</th>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
 @code {
 
+    private void SetTime()
+    {
+        if (StartDate.HasValue && EndDate.HasValue)
+        {
+            if (StartDate.Value < EndDate.Value)
+            {
+                DateTime start = StartDate.Value.UtcDateTime.ToLocalTime();
+                DateTime end = EndDate.Value.UtcDateTime.ToLocalTime();
+                var period = end - start;
+                
+            }
+           
+        }
+       
+    }
 
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddMonths(-1);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
+        DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddMonths(-1);
+        DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
 
 }
-
