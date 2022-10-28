@@ -4,12 +4,16 @@
 
 <h2 style="color:white">Zaplanuj trening</h2>
 
+
+
 <div class="container">
-    <div style="color:white" class="form-group">
+    <div style="color:dimgray" class="form-group">
         <label>Wybierz date rozpoczęcia przygotowań</label>
         <DateRangePicker @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="() => SetTime()"></DateRangePicker>
+
     </div>
 </div>
+
 
 @if (ExerciseTypes == null)
 {
@@ -19,107 +23,27 @@
 else
 {
 
-            <RadzenDataGrid Data="@WarmupsOnGo"  TItem="WarmupOnGoDto" 
-        AllowFiltering="true" AllowColumnResize="true" AllowSorting="true">
-        <Columns>
-            <RadzenDataGridColumn TItem="WarmupOnGoDto" Property="Name" Title="Ćwiczenie" />
-            <RadzenDataGridColumn TItem="WarmupOnGoDto" Property="Description" Title="Opis ćwiczenia" />
-            <RadzenDataGridColumn TItem="WarmupOnGoDto" Property="TimeLength" Title="Długość trwania" />
-        </Columns>
-
-    </RadzenDataGrid>
+    <label style="color:wheat">Trening został ułożony!</label>
+<SfSchedule TValue="Object">
+</SfSchedule>
 
     var warmupsOnGo = new List<WarmupOnGoDto>();
     var warmupsOnWalk = new List<WarmupOnWalkDto>();
     var warmupsOnPlace = new List<WarmupOnPlaceDto>();
-
+    var technique = new List<TechniqueDto>();
+    var strength = new List<StrengthDto>();
+    var speed = new List<SpeedDto>();
+    var final = new List<FinalExerciseDto>();
+    var power = new List<PowerDto>();
 
     warmupsOnGo = WarmupsOnGo.ToList();
     warmupsOnWalk = WarmupsOnWalk.ToList();
     warmupsOnPlace = WarmupsOnPlace.ToList();
-
-    <div class="row pt-5">
-        <div class="table-responsive">
-            <h2 style="color:white">Rozgrzewka w biegu</h2>
-            <table class="table table-striped table-dark">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Ćwiczenie</th>
-                        <th>Opis ćwiczenia</th>
-                        <th>Długość trwania</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    @foreach (var exerciseOnGo in warmupsOnGo)
-                    {
-
-                        <tr>
-                            <th>@exerciseOnGo.Name</th>
-                            <th>@exerciseOnGo.Description</th>
-                            <th>@exerciseOnGo.TimeLength sekund</th>
-
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="row pt-5">
-        <div class="table-responsive">
-            <h2 style="color:white">Rozgrzewka w marszu</h2>
-            <table class="table table-striped table-dark">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Ćwiczenie</th>
-                        <th>Opis ćwiczenia</th>
-                        <th>Długość trwania</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var exerciseOnWalk in warmupsOnWalk)
-                    {
-                        <tr>
-                            <th>@exerciseOnWalk.Name</th>
-                            <th>@exerciseOnWalk.Description</th>
-                            <th>@exerciseOnWalk.TimeLength sekund</th>
-
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="row pt-5">
-        <div class="table-responsive">
-            <h2 style="color:white">Rozgrzewka w miejscu</h2>
-            <table class="table table-striped table-dark">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Ćwiczenie</th>
-                        <th>Opis ćwiczenia</th>
-                        <th>Długość trwania</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var exerciseOnPlace in warmupsOnPlace)
-                    {
-                        <tr>
-                            <th>@exerciseOnPlace.Name</th>
-                            <th>@exerciseOnPlace.Description</th>
-                            <th>@exerciseOnPlace.TimeLength sekund</th>
-
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
+    technique = Techniques.ToList();
+    strength = Strengths.ToList();
+    speed = Speeds.ToList();
+    power = Powers.ToList();
+    final = FinalExercises.ToList();
 }
 @code {
 
@@ -142,5 +66,25 @@ else
         DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddMonths(-1);
         DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
+        public void ExerciseGenerator() 
+        {
+        var warmupsOnGo = new List<WarmupOnGoDto>();
+        var warmupsOnWalk = new List<WarmupOnWalkDto>();
+        var warmupsOnPlace = new List<WarmupOnPlaceDto>();
+        var technique = new List<TechniqueDto>();
+        var strength = new List<StrengthDto>();
+        var speed = new List<SpeedDto>();
+        var final = new List<FinalExerciseDto>();
+        var power = new List<PowerDto>();
+
+        warmupsOnGo = WarmupsOnGo.ToList();
+        warmupsOnWalk = WarmupsOnWalk.ToList();
+        warmupsOnPlace = WarmupsOnPlace.ToList();
+        technique = Techniques.ToList();
+        strength = Strengths.ToList();
+        speed = Speeds.ToList();
+        power = Powers.ToList();
+        final = FinalExercises.ToList();
+        }
 
 }

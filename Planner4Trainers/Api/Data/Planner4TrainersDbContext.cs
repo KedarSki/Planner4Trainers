@@ -1,4 +1,5 @@
-﻿using Api.Entities.Trainings;
+﻿using Api.Entities;
+using Api.Entities.Trainings;
 using Api.Entities.Trainings.Finals;
 using Api.Entities.Trainings.Mains;
 using Api.Entities.Trainings.Warmups;

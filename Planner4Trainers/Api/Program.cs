@@ -22,13 +22,13 @@ builder.Services.AddCors(options =>
     .AllowAnyHeader());
 });
 
-builder.Services.AddDbContextPool<AppIdentityDbContext>(options =>
-options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+builder.Services.AddDbContextPool<IdentityAppContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
 builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<AppIdentityDbContext>();
+    .AddEntityFrameworkStores<IdentityAppContext>();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

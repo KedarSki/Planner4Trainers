@@ -1,0 +1,68 @@
+﻿@page "/register"
+@using Newtonsoft.Json
+
+<h3>Register</h3>
+
+@if (_registerSuccessful == false)
+{
+    <EditForm Model="_userToRegister" OnValidSubmit="RegisterUser">
+        <DataAnnotationsValidator />
+
+        <div class="form-group my-3">
+            <label for="email">Email address</label>
+            <InputText @bind-Value="_userToRegister.EmailAdress" id="email" class="form-control" />
+            <ValidationMessage For="@(() => _userToRegister.EmailAdress)" />
+        </div>
+
+        <div class="form-group my-3">
+            <label for="email">Password</label>
+            <InputText @bind-Value="_userToRegister.Password" type="password" id="password" class="form-control" />
+            <ValidationMessage For="@(() => _userToRegister.Password)" />
+        </div>
+
+        <ValidationSummary />
+
+        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+        
+        @if (_attemptToRegisterFailed == true)
+        {
+            <p class="my-3 text-danger">@_attemptToRegisterFailedErrorMessage</p>
+        }
+    </EditForm>
+}
+
+else
+{
+    <h4>Register successful. Press the button below to go on the sign in page</h4>
+    <a href="/signin" class="btn btn-primary btn-lg">Sign in</a>
+}
+
+@code {
+    [Inject] HttpClient httpClient { get; set; }
+    private User _userToRegister = new() { EmailAdress = "user@example.com", Password = "Password1" };
+    private bool _registerSuccessful = false;
+    private bool _attemptToRegisterFailed = false;
+    private string _attemptToRegisterFailedErrorMessage = null;
+
+    private async Task RegisterUser()
+    {
+        _attemptToRegisterFailed = false;
+
+        var response = await httpClient.PostAsJsonAsync($"https://localhost:7136/api/user/register", _userToRegister);
+        var data = await response.Content.ReadAsStringAsync();
+
+        if (response.IsSuccessStatusCode)
+        {
+            _registerSuccessful = true;
+
+        }
+
+        else
+        {
+            string serverErrorMessage = await response.Content.ReadAsStringAsync();
+
+            _attemptToRegisterFailedErrorMessage = $"{serverErrorMessage} Please try again";
+            _attemptToRegisterFailed = true;
+        }
+    }
+}
