@@ -242,7 +242,7 @@ namespace Api.Controllers
         {
             try
             {
-                var final = await this.exerciseRepository.GetFinalExercises();
+                var final = await this.exerciseRepository.GetFinals();
                 var exerciseTypes = await this.exerciseRepository.GetExerciseTypes();
 
                 if (exerciseTypes == null || final == null)

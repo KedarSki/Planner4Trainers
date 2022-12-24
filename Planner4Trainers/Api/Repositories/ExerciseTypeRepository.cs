@@ -1,4 +1,6 @@
 ﻿using Api.Data;
+using Api.Entities.Planners;
+using Api.Entities.Plans;
 using Api.Entities.Trainings;
 using Api.Entities.Trainings.Finals;
 using Api.Entities.Trainings.Mains;
@@ -16,9 +18,39 @@ namespace Api.Repositories
         {
             this.planner4TrainersDbContext = planner4TrainersDbContext;
         }
-        public Task<ExerciseType> GetExerciseType(int id)
+
+        public async Task<int> AddPlan(Plan data)
         {
-            throw new NotImplementedException();
+            await this.planner4TrainersDbContext.Plans.AddAsync(data);
+            await this.planner4TrainersDbContext.SaveChangesAsync();
+            return data.Id;
+        }
+
+        public async Task AddPlanner(Planner data)
+        {
+            await this.planner4TrainersDbContext.Planners.AddAsync(data);
+            await this.planner4TrainersDbContext.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Plan>> GetPlans(Guid userId)
+        {
+            var plans = await this.planner4TrainersDbContext.Plans.Where(x => x.UserId == userId).ToListAsync();
+
+            return plans;
+        }
+
+        public async Task<IEnumerable<Planner>> GetPlanners(int planId)
+        {
+            var planner = await this.planner4TrainersDbContext.Planners.Where(x => x.PlanId == planId).ToListAsync();
+
+            return planner;
+        }
+
+        public async Task<ExerciseType> GetExerciseType(int id)
+        {
+            var exerciseTypes = await this.planner4TrainersDbContext.ExerciseType.SingleAsync(x => x.Id == id);
+
+            return exerciseTypes;
         }
 
         public async Task<IEnumerable<ExerciseType>> GetExerciseTypes()
@@ -33,7 +65,7 @@ namespace Api.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<FinalExercise>> GetFinalExercises()
+        public async Task<IEnumerable<FinalExercise>> GetFinals()
         {
             var finals = await this.planner4TrainersDbContext.Finals.ToListAsync();
 
@@ -52,9 +84,11 @@ namespace Api.Repositories
             return powers;
         }
 
-        public Task<Speed> GetSpeed(int id)
+        public async Task<Speed> GetSpeed(int id)
         {
-            throw new NotImplementedException();
+            var speed = await this.planner4TrainersDbContext.Speed.SingleAsync(x => x.Id == id);
+
+            return speed;
         }
 
         public async Task<IEnumerable<Speed>> GetSpeeds()
@@ -63,9 +97,11 @@ namespace Api.Repositories
            return speeds;
         }
 
-        public Task<Strength> GetStrength(int id)
+        public async Task<Strength> GetStrength(int id)
         {
-            throw new NotImplementedException();
+            var strength = await this.planner4TrainersDbContext.Strength.SingleAsync(x => x.Id == id);
+
+            return strength;
         }
 
         public async Task<IEnumerable<Strength>> GetStrengths()
@@ -74,9 +110,11 @@ namespace Api.Repositories
             return strengths;
         }
 
-        public Task<Technique> GetTechnique(int id)
+        public async Task<Technique> GetTechnique(int id)
         {
-            throw new NotImplementedException();
+            var technique = await this.planner4TrainersDbContext.Technique.SingleAsync(x => x.Id == id);
+
+            return technique;
         }
 
         public async Task<IEnumerable<Technique>> GetTechniques()
@@ -120,6 +158,23 @@ namespace Api.Repositories
             var warmupsOnWalk = await this.planner4TrainersDbContext.WarmupOnWalk.ToListAsync();
 
             return warmupsOnWalk;
+        }
+
+        public async Task<int> SaveChanges()
+        {
+            return await this.planner4TrainersDbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdatePlanner(Planner data)
+        {
+            this.planner4TrainersDbContext.Planners.Update(data);
+            await this.planner4TrainersDbContext.SaveChangesAsync();
+        }
+
+        public async Task<Planner> GetPlanner(int id)
+        {
+            var planner = await this.planner4TrainersDbContext.Planners.SingleAsync(x => x.Id == id);
+            return planner;
         }
     }
 }

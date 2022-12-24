@@ -1,8 +1,11 @@
-﻿using Api.Entities.Trainings;
+﻿using Api.Entities.Planners;
+using Api.Entities.Plans;
+using Api.Entities.Trainings;
 using Api.Entities.Trainings.Finals;
 using Api.Entities.Trainings.Mains;
 using Api.Entities.Trainings.Warmups;
 using Common.Dtos;
+using Common.Models;
 
 namespace Api.Extensions
 {
@@ -159,7 +162,29 @@ namespace Api.Extensions
                     }).ToList();
         }
 
+        public static IEnumerable<DDFields> ConvertToDto(this IEnumerable<Plan> plans)
+        {
+            return plans.Select(
+                    x => new DDFields
+                    {
+                        Id = x.Id.ToString(),
+                        Text = x.Name
+                    }).ToList();
+        }
 
-
+        public static IEnumerable<PlannerDto> ConvertToDto(this IEnumerable<Planner> plans)
+        {
+            return plans.Select(
+                    x => new PlannerDto
+                    {
+                        Id = x.Id,
+                        PlanId = x.PlanId,
+                        Subject = x.Subject,
+                        StartTime = x.StartTime,
+                        EndTime = x.EndTime,
+                        Status = x.Status,
+                        Description = x.Description                        
+                    }).ToList();
+        }
     }
 }

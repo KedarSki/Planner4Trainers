@@ -1,7 +1,11 @@
-﻿using Api.Entities.Trainings;
+﻿using System.Numerics;
+using Api.Entities.Planners;
+using Api.Entities.Plans;
+using Api.Entities.Trainings;
 using Api.Entities.Trainings.Finals;
 using Api.Entities.Trainings.Mains;
 using Api.Entities.Trainings.Warmups;
+using Common.Dtos;
 
 namespace Api.Repositories.Contracts
 {
@@ -14,9 +18,10 @@ namespace Api.Repositories.Contracts
         Task<IEnumerable<Speed>> GetSpeeds();
         Task<IEnumerable<Strength>> GetStrengths();
         Task<IEnumerable<Technique>> GetTechniques();
-        Task<IEnumerable<FinalExercise>> GetFinalExercises();
+        Task<IEnumerable<FinalExercise>> GetFinals();
         Task<IEnumerable<ExerciseType>> GetExerciseTypes();
-
+        Task<IEnumerable<Plan>> GetPlans(Guid userId);
+        Task<IEnumerable<Planner>> GetPlanners(int planId);
 
         Task<WarmupOnGo> GetWarmupOnGo(int id);
         Task<WarmupOnWalk> GetWarmupOnWalk(int id);
@@ -28,6 +33,11 @@ namespace Api.Repositories.Contracts
         Task<FinalExercise> GetFinal(int id);
         Task<ExerciseType> GetExerciseType(int id);
 
+        Task<int> AddPlan(Plan data);
+        Task AddPlanner(Planner data);
+        Task<Planner> GetPlanner(int id);
+        Task UpdatePlanner(Planner data);
 
+        Task<int> SaveChanges();
     }
 }

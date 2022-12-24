@@ -3,7 +3,7 @@
 @using Client.Providers
 @using Newtonsoft.Json
 
-<h3>SignIn</h3>
+<h3 style="color: white">SignIn</h3>
 
 @if (_signInSuccessful == false)
 {
@@ -11,13 +11,13 @@
         <DataAnnotationsValidator />
 
         <div class="form-group my-3">
-            <label for="email">Email address</label>
+            <label for="email" style="color: white">Email address</label>
             <InputText @bind-Value="_userToSignIn.EmailAdress" id="email" class="form-control" />
             <ValidationMessage For="@(() => _userToSignIn.EmailAdress)" />
         </div>
 
         <div class="form-group my-3">
-            <label for="password">Password</label>
+            <label for="password" style="color: white">Password</label>
             <InputText @bind-Value="_userToSignIn.Password" type="password" id="password" class="form-control" />
             <ValidationMessage For="@(() => _userToSignIn.Password)" />
         </div>
@@ -35,7 +35,7 @@
 
 else
 {
-    <h4>Signin successful. You can plan</h4>
+    <h4 style="color: white">Signin successful. You can plan</h4>
     <a href="/signin" class="btn btn-primary btn-lg">Sign in</a>
 }
 

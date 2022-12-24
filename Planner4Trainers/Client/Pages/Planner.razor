@@ -1,90 +1,237 @@
 ﻿@page "/planner"
-@using BlazorDateRangePicker
 @inherits ExerciseTypesBase
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using BlazorDateRangePicker
+@using Client.Services.Contracts
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Inputs
+@using System.Security.Claims
+@using Syncfusion.Blazor.Buttons
 
-<h2 style="color:white">Zaplanuj trening</h2>
+<h3 style="color:white">Zaplanuj treningi</h3>
 
+<EditForm Model="_addPlan" OnValidSubmit="AddPlan">
+    <DataAnnotationsValidator />
 
-
-<div class="container">
-    <div style="color:dimgray" class="form-group">
-        <label>Wybierz date rozpoczęcia przygotowań</label>
-        <DateRangePicker @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="() => SetTime()"></DateRangePicker>
-
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label color_white">Nazwa</label>
+        <div class="col-sm-3">
+            <SfTextBox @bind-Value="_addPlan.Name"></SfTextBox>
+            <ValidationMessage For="@(() => _addPlan.Name)" />
+        </div>
     </div>
-</div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label color_white">Data rozpoczęcia przygotowań i dzień zawodów</label>
+        <div class="col-sm-3">
+            <SfDateRangePicker @bind-StartDate="_addPlan.StartTime" @bind-EndDate="_addPlan.EndTime" Format="yyyy-MM-dd"></SfDateRangePicker>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label color_white">Dni tygodnia</label>
+        <div class="col-sm-3">
+            <SfCheckBox CssClass="color_white" Label="Poniedziałek" @bind-Checked="_addPlan.Monday"></SfCheckBox>
+            <SfCheckBox CssClass="color_white" Label="Wtorek" @bind-Checked="_addPlan.Tuesday"></SfCheckBox>
+            <SfCheckBox CssClass="color_white" Label="Środa" @bind-Checked="_addPlan.Wednesday"></SfCheckBox>
+            <SfCheckBox CssClass="color_white" Label="Czwartek" @bind-Checked="_addPlan.Thursday"></SfCheckBox>
+            <SfCheckBox CssClass="color_white" Label="Piątek" @bind-Checked="_addPlan.Friday"></SfCheckBox>
+            <SfCheckBox CssClass="color_white" Label="Sobota" @bind-Checked="_addPlan.Saturday"></SfCheckBox>
+            <SfCheckBox CssClass="color_white" Label="Niedziela" @bind-Checked="_addPlan.Sunday"></SfCheckBox>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Utwórz</button>
+</EditForm>
 
-
-@if (ExerciseTypes == null)
+@if (creatingPlanner)
 {
-    <h3 style="color:white">Trwa Ładowanie strony</h3>
+    <br />
+    <label style="color:wheat">Plan jest w trakcie generowania...</label>
+    <br />
 }
 
-else
+@if (createdPlanner)
 {
+    <br />
+    <label style="color:wheat">Plan został wygenerowany!</label>
+    <br />
+}
 
-    <label style="color:wheat">Trening został ułożony!</label>
-<SfSchedule TValue="Object">
+<hr />
+<h3 style="color:white">Wczytaj wybrany plan</h3>
+
+<EditForm Model="_getPlan" OnValidSubmit="GetPlanner">
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label color_white">Dostępne plany</label>
+        <div class="col-sm-3">
+            <SfDropDownList ID="Plans" DataSource="@PlanData" Placeholder="Wybierz plan..." @bind-Value="_getPlan.Id">
+                <DropDownListFieldSettings Value="Id" Text="Text"></DropDownListFieldSettings>
+            </SfDropDownList>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Wybierz</button>
+</EditForm>
+
+@if (loadedPlanner)
+{
+    <br />
+    <label style="color:wheat">Plan został wczytany!</label>
+    <br />
+}
+
+<hr />
+
+<SfSchedule TValue="PlannerDto" @ref="@ScheduleRef" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" @bind-CurrentView="@CurrentView" FirstDayOfWeek="1">
+    <ScheduleEvents TValue="PlannerDto" OnEventClick="OnEventClick" OnActionBegin="OnActionBegin"></ScheduleEvents>
+    <ScheduleEventSettings DataSource="@DataSource" AllowDeleting="false"></ScheduleEventSettings>
+    <ScheduleTemplates>
+        <EditorTemplate>
+            <table class="custom-event-editor" width="100%" height="100%" cellpadding="5">
+                <tbody>
+                    <tr>
+                        <td class="e-textlabel color_black">Nazwa</td>
+                        <td colspan="4">
+                            <SfTextBox @bind-Value="@((context as PlannerDto).Subject)" Readonly="true"></SfTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel color_black">Start</td>
+                        <td colspan="4">
+                            <SfDateTimePicker @bind-Value="@((context as PlannerDto).StartTime)" Readonly="true"></SfDateTimePicker>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel color_black">Koniec</td>
+                        <td colspan="4">
+                            <SfDateTimePicker @bind-Value="@((context as PlannerDto).EndTime)" Readonly="true"></SfDateTimePicker>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel color_black">Status</td>
+                        <td colspan="4">
+                            <SfDropDownList ID="EventType" DataSource="@StatusData" Placeholder="Choose status" @bind-Value="@((context as PlannerDto).Status)">
+                                <DropDownListFieldSettings Value="Id"></DropDownListFieldSettings>
+                            </SfDropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel color_black">Ćwiczenia</td>
+                        <td colspan="4">
+                            <SfTextBox Multiline="true" @bind-Value="@((context as PlannerDto).Description)" Readonly="true" CssClass=""></SfTextBox>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </EditorTemplate>
+    </ScheduleTemplates>
+
+    <ScheduleViews>
+        <ScheduleView Option="View.Day"></ScheduleView>
+        <ScheduleView Option="View.Week"></ScheduleView>
+        <ScheduleView Option="View.WorkWeek"></ScheduleView>
+        <ScheduleView Option="View.Month"></ScheduleView>
+        <ScheduleView Option="View.Agenda"></ScheduleView>
+    </ScheduleViews>
 </SfSchedule>
 
-    var warmupsOnGo = new List<WarmupOnGoDto>();
-    var warmupsOnWalk = new List<WarmupOnWalkDto>();
-    var warmupsOnPlace = new List<WarmupOnPlaceDto>();
-    var technique = new List<TechniqueDto>();
-    var strength = new List<StrengthDto>();
-    var speed = new List<SpeedDto>();
-    var final = new List<FinalExerciseDto>();
-    var power = new List<PowerDto>();
 
-    warmupsOnGo = WarmupsOnGo.ToList();
-    warmupsOnWalk = WarmupsOnWalk.ToList();
-    warmupsOnPlace = WarmupsOnPlace.ToList();
-    technique = Techniques.ToList();
-    strength = Strengths.ToList();
-    speed = Speeds.ToList();
-    power = Powers.ToList();
-    final = FinalExercises.ToList();
-}
 @code {
+    [Inject] IPlannerService plannerService { get; set; }
+    private GetPlanDto _getPlan = new GetPlanDto();
+    private AddPlanDto _addPlan = new AddPlanDto();
+    SfSchedule<PlannerDto> ScheduleRef;
+    DateTime CurrentDate = DateTime.Today;
+    View CurrentView = View.Month;
+    IEnumerable<DDFields> PlanData;
+    IEnumerable<PlannerDto> DataSource;
+    public bool creatingPlanner, createdPlanner = false;
+    public bool loadedPlanner = false;
+    private Guid userId;
 
-    private void SetTime()
+    protected override async Task OnParametersSetAsync()
     {
-        if (StartDate.HasValue && EndDate.HasValue)
-        {
-            if (StartDate.Value < EndDate.Value)
-            {
-                DateTime start = StartDate.Value.UtcDateTime.ToLocalTime();
-                DateTime end = EndDate.Value.UtcDateTime.ToLocalTime();
-                var period = end - start;
-                
-            }
-           
-        }
-       
+        userId = await GetUserId();
+        _addPlan.UserId = userId;
+        _addPlan.StartTime = DateTime.Today.AddMonths(-1);
+        _addPlan.EndTime = DateTime.Today.AddDays(1).AddTicks(-1);
+
+        await GetPlans();
+        await base.OnParametersSetAsync();
     }
 
-        DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddMonths(-1);
-        DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
+    public async Task GetPlans()
+    {
+        PlanData = await plannerService.GetPlans(userId);
+    }
 
-        public void ExerciseGenerator() 
+    private async Task GetPlanner()
+    {
+        createdPlanner = false;
+        loadedPlanner = false;
+        DataSource = await plannerService.GetPlanner(_getPlan.Id);
+        loadedPlanner = true;
+        createdPlanner = false;
+    }
+
+    private async Task AddPlan()
+    {
+        loadedPlanner = false;
+        creatingPlanner = true;
+        createdPlanner = await plannerService.Add(_addPlan);
+        creatingPlanner = false;
+        await GetPlans();
+    }
+
+    public async Task OnEventClick(EventClickArgs<PlannerDto> args)
+    {
+        args.Cancel = true;
+        ScheduleRef.Readonly = false;
+        await ScheduleRef.OpenEditorAsync(args.Event, CurrentAction.Save);
+    }
+
+    public async Task OnActionBegin(ActionEventArgs<PlannerDto> args)
+    {
+        if (args.ActionType == ActionType.EventChange)
         {
-        var warmupsOnGo = new List<WarmupOnGoDto>();
-        var warmupsOnWalk = new List<WarmupOnWalkDto>();
-        var warmupsOnPlace = new List<WarmupOnPlaceDto>();
-        var technique = new List<TechniqueDto>();
-        var strength = new List<StrengthDto>();
-        var speed = new List<SpeedDto>();
-        var final = new List<FinalExerciseDto>();
-        var power = new List<PowerDto>();
-
-        warmupsOnGo = WarmupsOnGo.ToList();
-        warmupsOnWalk = WarmupsOnWalk.ToList();
-        warmupsOnPlace = WarmupsOnPlace.ToList();
-        technique = Techniques.ToList();
-        strength = Strengths.ToList();
-        speed = Speeds.ToList();
-        power = Powers.ToList();
-        final = FinalExercises.ToList();
+            PlannerDto data = args.ChangedRecords[0];
+            await plannerService.Update(data);
         }
+    }
 
+    private async Task<Guid> GetUserId()
+    {
+        var user = (await AuthenticationStateProvider.GetAuthenticationStateAsync()).User;
+        string userId = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+        return Guid.Parse(userId);
+    }
 }
+
+<style>
+    .color_black {
+        color: black;
+    }
+
+    .color_white {
+        color: white;
+    }
+
+    .e-checkbox-wrapper .e-label {
+        color: white;
+        padding-right: 40px;
+    }
+
+    .e-checkbox-wrapper .e-label:hover {
+        color: wheat;
+    }
+
+    .e-checkbox-wrapper:hover .e-label {
+        color: wheat;
+    }
+
+    .e-popup.e-popup-open.e-dialog {
+        width: 850px !important;
+        height: 800px !important;
+    }
+
+    textarea {
+        height: 480px !important;
+    }
+</style>

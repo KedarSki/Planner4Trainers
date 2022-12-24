@@ -1,5 +1,6 @@
 ﻿using Client.Services.Contracts;
 using Common.Dtos;
+using Common.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace Client.Pages
@@ -18,7 +19,7 @@ namespace Client.Pages
         public IEnumerable<TechniqueDto> Techniques { get; set; }
         public IEnumerable<SpeedDto> Speeds { get; set; }
         public IEnumerable<FinalExerciseDto> FinalExercises { get; set; }
-
+        public List<DDFields> StatusData;
 
         protected override async Task OnInitializedAsync()
         {
@@ -39,8 +40,12 @@ namespace Client.Pages
             Speeds = await ExerciseTypeService.GetSpeeds();
 
             FinalExercises = await ExerciseTypeService.GetFinalExercises();
+
+            StatusData = new List<DDFields>() {
+                new DDFields(){ Id= "Planned", Text= "Planned" },
+                new DDFields(){ Id= "Completed", Text= "Completed" },
+                new DDFields(){ Id= "Canceled", Text= "Canceled" },
+            };
         }
-
-
     }
 }

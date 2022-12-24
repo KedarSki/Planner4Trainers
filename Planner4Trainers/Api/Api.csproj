@@ -31,7 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\Planner\" />
+    <Folder Include="Entities\Plans\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Entities\Plan\" />
+  </ItemGroup>
 </Project>

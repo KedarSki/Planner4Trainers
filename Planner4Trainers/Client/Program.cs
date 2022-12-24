@@ -16,7 +16,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7136") });
 
 builder.Services.AddBlazoredLocalStorage();
-
 builder.Services.AddAuthorizationCore();
 
 builder.Services.AddScoped<AppAuthenticationStateProvider>();
@@ -25,6 +24,7 @@ builder.Services.AddScoped<AuthenticationStateProvider>(provider
 
 
 builder.Services.AddScoped<IExerciseTypeService, ExerciseTypeService>();
+builder.Services.AddScoped<IPlannerService, PlannerService>();
 
 builder.Services.AddSyncfusionBlazor();
 

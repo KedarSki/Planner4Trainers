@@ -6,4 +6,10 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Dtos\Planner\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dtos\Planner\" />
+  </ItemGroup>
 </Project>

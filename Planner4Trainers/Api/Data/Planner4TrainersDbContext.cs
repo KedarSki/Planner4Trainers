@@ -1,4 +1,6 @@
 ﻿using Api.Entities;
+using Api.Entities.Plans;
+using Api.Entities.Planners;
 using Api.Entities.Trainings;
 using Api.Entities.Trainings.Finals;
 using Api.Entities.Trainings.Mains;
@@ -1149,6 +1151,54 @@ namespace Api.Data
 
             });
 
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 62,
+                Name = "Seria na worek 30 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie trzydziestu sekund następuje zmiana zawodnika. " +
+    "Takich rund zawodnik powinien wykonać 12. Przerwa to również trzydzieści sekund",
+                TimeLength = 30,
+                Rounds = 12,
+                ExerciseTypeId = 13
+
+            });
+
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 63,
+                Name = "Seria na worek 20 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie dwudziesty sekund następuje zmiana zawodnika. " +
+                "Takich rund zawodnik powinien wykonać szesnaście. Przerwa powinna wyności czterdzieści sekund.",
+                TimeLength = 20,
+                Rounds = 16,
+                ExerciseTypeId = 13
+
+            });
+
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 64,
+                Name = "Seria na worek 15 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie piętnastu sekund następuje zmiana zawodnika. " +
+                "Takich rund zawodnik powinien wykonać osiemnaście. Przerwa powinna wyności czterdzieści pięć sekund.",
+                TimeLength = 15,
+                Rounds = 18,
+                ExerciseTypeId = 13
+
+            });
+
+            modelBuilder.Entity<Speed>().HasData(new Speed
+            {
+                Id = 65,
+                Name = "Seria na worek 10 sekund",
+                Description = "Szybkie serie uderzania na worek po upływie dziesięciu sekund następuje zmiana zawodnika. " +
+                "Takich rund zawodnik powinien wykonać osiemnaście. Przerwa powinna wyności pięćdziesiąt sekund.",
+                TimeLength = 10,
+                Rounds = 24,
+                ExerciseTypeId = 13
+
+            });
+
             modelBuilder.Entity<FinalExercise>().HasData(new FinalExercise
             {
                 Id = 62,
@@ -1368,22 +1418,25 @@ namespace Api.Data
                 
             });
 
-
+            modelBuilder.Entity<Planner>()
+                .HasOne(x => x.Plan)
+                .WithMany(x => x.Planners)
+                .HasForeignKey(x => x.PlanId)
+                .OnDelete(DeleteBehavior.Restrict);
 
         }
 
         public DbSet<WarmupOnGo> WarmupOnGo { get; set; }
         public DbSet<WarmupOnWalk> WarmupOnWalk { get; set; }
-        public DbSet <WarmupOnPlace> WarmupOnPlace { get; set; }
+        public DbSet<WarmupOnPlace> WarmupOnPlace { get; set; }
         public DbSet<ExerciseType> ExerciseType { get; set; }
         public DbSet<Power> Power { get; set; }
         public DbSet<Technique> Technique { get; set; }
         public DbSet<Strength> Strength { get; set; }
         public DbSet<Speed> Speed { get; set; }    
         public DbSet<FinalExercise> Finals { get; set; }
-
-
-
+        public DbSet<Plan> Plans { get; set; }
+        public DbSet<Planner> Planners { get; set; }
 
     }
 }
