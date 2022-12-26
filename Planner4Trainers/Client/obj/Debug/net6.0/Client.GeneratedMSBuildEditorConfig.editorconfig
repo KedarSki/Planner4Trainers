@@ -9,77 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = Client
 build_property.RootNamespace = Client
-build_property.ProjectDir = C:\Users\rados\Desktop\Planner4Trainers\Planner4Trainers\Client\
+build_property.ProjectDir = C:\Git\Planner4Trainers\Planner4Trainers\Client\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rados\Desktop\Planner4Trainers\Planner4Trainers\Client
+build_property.MSBuildProjectDirectory = C:\Git\Planner4Trainers\Planner4Trainers\Client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/App.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/ExerciseTypes.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/ExerciseTypes.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhlcmNpc2VUeXBlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Finals.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Finals.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmluYWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Home.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Planner.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Planner.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxhbm5lci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Power.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Power.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG93ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Register.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/SignIn.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/SignIn.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbkluLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Speed.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Speed.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3BlZWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Strength.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Strength.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RyZW5ndGgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Technique.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Technique.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVjaG5pcXVlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Pages/Warmups.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Pages/Warmups.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2FybXVwcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Shared/Components/DatePicker.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Shared/Components/DatePicker.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbXBvbmVudHNcRGF0ZVBpY2tlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Shared/SurveyPrompt.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/_Imports.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Shared/MainLayout.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ocnk4r8tjs
 
-[C:/Users/rados/Desktop/Planner4Trainers/Planner4Trainers/Client/Shared/NavMenu.razor]
+[C:/Git/Planner4Trainers/Planner4Trainers/Client/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-kd1ih0s86n
