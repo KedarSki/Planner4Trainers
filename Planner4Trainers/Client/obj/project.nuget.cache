@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PMAgRQ1Qdsar8UkAyX3iVSqbWIqOeHOJm3GPiiNXK0JF1mjm9//iIojQmwMRkm5LA/xO6mY9ugtb1tQgj05Bzg==",
+  "dgSpecHash": "rp7zRdq5nrfSu7Jdzh3w+UDXwbo4jA0vnw9klm23vbZZT/5WdjeJy7bVHEzCgaOF+74L41Go2dWZDLJSMusvfw==",
   "success": true,
   "projectFilePath": "C:\\Git\\Planner4Trainers\\Planner4Trainers\\Client\\Client.csproj",
   "expectedPackageFiles": [
@@ -127,7 +127,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.12\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.12.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.13\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.13.nupkg.sha512"
   ],
   "logs": []
 }

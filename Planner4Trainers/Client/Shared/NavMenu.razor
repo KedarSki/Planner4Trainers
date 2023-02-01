@@ -1,4 +1,6 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Blazored.LocalStorage;
+@using Client.Providers;
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Planner - 4 - Trainers</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -93,7 +95,7 @@
             </nav>
         </div>
 
-            <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+            <div class="@NavMenuCssClass" @onclick="SignOut">
             <nav class="flex-column">
                 <div class="nav-item px-3">
                     <button class="nav-link" href="register" Match="NavLinkMatch.All">
@@ -135,10 +137,25 @@
 @code {
     private bool collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    [Inject] ILocalStorageService LocalStorageService { get; set; }
+    [Inject] AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+    [Inject] NavigationManager NavigationManager { get; set; }
+    private async Task SignOut()
+    {
+        if (await LocalStorageService.ContainKeyAsync("bearerToken"))
+        {
+            await LocalStorageService.RemoveItemAsync("bearerToken");
+            ((AppAuthenticationStateProvider)AuthenticationStateProvider).SignOut();
+        }
+
+        StateHasChanged();
+        NavigationManager.NavigateTo("/");
     }
 }
