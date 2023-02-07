@@ -989,11 +989,11 @@
       "url": "_framework\/Common.pdb"
     },
     {
-      "hash": "sha256-WeSRyomfq8Rq4Jr97UQsGGazR4HwyGbrwlNsTSoKOXE=",
+      "hash": "sha256-+27IBc8+PNV12Gkbm302T91iNItHql2MT5DCo7i0M1o=",
       "url": "_framework\/Client.dll"
     },
     {
-      "hash": "sha256-azLx4qf9Zy4kqWMsdG2rdmkUigGH9gbxSa5QG6PHMM4=",
+      "hash": "sha256-i8DqNGMp2cel\/O9Y+IBymgscZj5mbFlkmM1UAm1k1xk=",
       "url": "_framework\/Client.pdb"
     },
     {
@@ -1001,7 +1001,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-UmygdplNudnWoTMGrGGh475R588v92Az\/fJ87V83F\/w=",
+      "hash": "sha256-rblALdrgOxe23v\/Aex5Fdz1TqaHfbdkv9vqjiaMv2h8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1541,5 +1541,5 @@
       "url": "_content\/BlazorDateRangePicker\/daterangepicker.scss"
     }
   ],
-  "version": "rVY1vN+s"
+  "version": "LUblNpPU"
 };

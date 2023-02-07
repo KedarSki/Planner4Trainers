@@ -307,7 +307,7 @@ namespace Api.Controllers
 
             for (int i = 1; i <= speedCount; i++)
             {
-                var itemIds = speeds.Where(x => !usedSpeed.Contains(x.Id)).Select(x => x.Id).ToList();
+                var itemIds = speeds.Where(x => !usedSpeed.Contains(x.Id)).OrderByDescending(x => x.TimeLength).Select(x => x.Id).ToList();
                 var itemId = itemIds[random.Next(itemIds.Count())];
                 var item = await exerciseRepository.GetSpeed(itemId);
 
